@@ -1,0 +1,10 @@
+num = int(input("Enter a number:"))
+red = int(input("Enter the value to be reduced it by: "))
+num //=red
+print(f"Number after being reduced by {red} = {num}")
+
+
+Output : 
+Enter a number:15
+Enter the value to be reduced it by: 5
+Number after being reduced by 5 = 3
