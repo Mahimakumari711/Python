@@ -1,0 +1,10 @@
+a,b=input("Enter the two number : ").split(" ")
+x=int(a)
+y=int(b)
+res=x**y
+print("Result of power of number is : ",res)
+
+
+Output : 
+Enter the two number : 2 6
+Result of power of number is :  64
