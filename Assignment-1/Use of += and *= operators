@@ -1,0 +1,11 @@
+a,b=input("Enter the two number : ").split(" ")
+a=int(a)
+b=int(b)
+a+=a
+b*=b
+print("Result are : ",a,b)
+
+
+Output : 
+Enter the two number : 10 5
+Result are :  20 25
