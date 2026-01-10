@@ -1,0 +1,15 @@
+a,b,c=input("Enter the coefficient of quadratic equation : ").split(" ")
+a=int(a)
+b=int(b)
+c=int(c)
+print("Quadratic equation is : " ,a,"x^2",b,"x",c)
+if(a!=0):
+    r1=(-b+((b**2)-4*a*c)**0.5)/2*a
+    r2=(-b-((b**2)-4*a*c)**0.5)/2*a
+print("Roots are : ",r1,r2)
+
+
+Output : 
+Enter the coefficient of quadratic equation : 4 12 9
+Quadratic equation is :  4 x^2 12 +x+ 9
+Roots are :  -24.0 -24.0
