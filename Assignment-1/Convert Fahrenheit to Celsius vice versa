@@ -1,0 +1,13 @@
+far = int(input("Enter the temp in Farheinhiet : "))
+cel = (far-32)*(5/9)
+print(f"Temp in Celsius: {cel}")
+cel = int(input("Enter the temp in Celsius : "))
+far = 32 + cel*(9/5)
+print(f"Temp in Farheinhiet: {far}")
+
+
+Output : 
+Enter the temp in Farheinhiet : 212
+Temp in Celsius: 100.0
+Enter the temp in Celsius : 100
+Temp in Farheinhiet: 212.0
