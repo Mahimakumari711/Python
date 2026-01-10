@@ -1,0 +1,9 @@
+sec=int(input("Enter the time in second "))
+min=sec//60
+sec=sec%60
+print("Time is ",min,"min:",sec,"sec")
+
+
+Output : 
+Enter the time in second 128
+Time is  2 min: 8 sec
