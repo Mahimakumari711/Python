@@ -1,0 +1,19 @@
+a,b=int(input("Enter the first nuber")), int(input("Enter the second number"))
+s=a+b
+d=a-b
+p=a*b
+q=a/b
+
+print("Sum is : " ,s)
+print("Difference is : ",d)
+print("Product is : ",p)
+print("Quolient is : ",q)
+
+
+Output : 
+Enter the first nuber20
+Enter the second number10
+Sum is :  30
+Difference is :  10
+Product is :  200
+Quolient is :  2.0
