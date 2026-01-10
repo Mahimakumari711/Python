@@ -1,0 +1,9 @@
+a,b=int(input("Enter the fist number")),int(input("enter the second number"))
+rem=a%b
+print("Remainder is :",rem)
+
+
+Output : 
+Enter the fist number34
+enter the second number10
+Remainder is : 4
