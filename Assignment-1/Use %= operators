@@ -1,0 +1,9 @@
+num1,num2=int(input("Enter the fist number : ")),int(input("Enter the second number : "))
+num1%=num2
+print("Result is : ",num1)
+
+
+Output : 
+Enter the fist number : 45 
+Enter the second number : 10
+Result is :  5
