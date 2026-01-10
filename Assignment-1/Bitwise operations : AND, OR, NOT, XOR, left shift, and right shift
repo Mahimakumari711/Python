@@ -1,0 +1,19 @@
+a = int(input("Enter the first number : "))
+b = int(input("Enter the second number : "))
+print(f"AND operation : {a&b}")
+print(f"OR operation : {a|b}")
+print(f"NOT operation : {~a}")
+print(f"XOR operation : {a^b}")
+print(f"Right Shift operation : {a<<b}")
+print(f"Left Shift operation : {a>>b}")
+
+
+Output : 
+Enter the first number : 5
+Enter the second number : 2
+AND operation : 0
+OR operation : 7
+NOT operation : -6
+XOR operation : 7
+Right Shift operation : 20
+Left Shift operation : 1
