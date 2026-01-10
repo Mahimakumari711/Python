@@ -1,0 +1,11 @@
+num=int(input("Enter the number"))
+sq=num**2
+cube=num**3
+print("Square of given number is : ",sq)
+print("Cube of given number is : ",cube)
+
+
+Output : 
+Enter the number3
+Square of given number is :  9
+Cube of given number is :  27
