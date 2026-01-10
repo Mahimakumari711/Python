@@ -1,0 +1,12 @@
+salary = int(input("Enter the salary : "))
+da = 0.5 * salary
+hra = 0.2 * salary
+gs = salary + da + hra
+print(f"DA = {da}\nHRA = {hra}\nThe Gross Salary = {gs}")
+
+
+Output : 
+Enter the salary : 10000
+DA = 5000.0
+HRA = 2000.0
+The Gross Salary = 17000.0
