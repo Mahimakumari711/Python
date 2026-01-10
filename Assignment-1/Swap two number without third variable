@@ -1,0 +1,12 @@
+a,b=input("Enter the two number : ").split(" ")
+a=int(a)
+b=int(b)
+a+=b
+b=a-b
+a-=b
+print("Value of a and b are : ",a,b)
+
+
+Output : 
+Enter the two number : 5 4
+Value of a and b are :  4 5
