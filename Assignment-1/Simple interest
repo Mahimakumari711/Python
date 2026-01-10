@@ -1,0 +1,12 @@
+p=int(input("Enter the principle amount"))
+r=float(input("Enter the interest rate"))
+t=int(input("Enter the time in year"))
+si=(p*r*t)/100
+print("Simple interest is : ",si)
+
+
+Output : 
+Enter the principle amount1000
+Enter the interest rate2.67
+Enter the time in year5
+Simple interest is :  133.5
