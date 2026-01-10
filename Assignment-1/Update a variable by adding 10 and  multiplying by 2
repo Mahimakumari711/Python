@@ -1,0 +1,11 @@
+num=int(input ("Enter the number "))
+num=num+10
+print("Result after add is : ",num)
+num*=2
+print("Result after multiplication : ",num)
+
+
+Output : 
+Enter the number 20
+Result after add is :  30
+Result after multiplication :  60
