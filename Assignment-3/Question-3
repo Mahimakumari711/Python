@@ -1,0 +1,19 @@
+num=int(input("Enter the number : "))
+count=0
+while(num>0):
+    temp=num%10
+    if(temp==0 or temp==1):
+        count=count+1
+    else :
+        count=0
+        break
+    num=num//10
+if(count>0):
+        print("Given number is binary ")
+else :
+    print("Given number in not binary ")
+
+
+Output : 
+Enter the number : 3546
+Given number in not binary
