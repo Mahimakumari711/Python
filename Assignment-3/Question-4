@@ -1,0 +1,18 @@
+num=int(input("Enter the number : "))
+c1=0
+c2=0
+while(num>0):
+    temp=num%10
+    if((temp%2)==0):
+        c1=c1+1
+    else :
+        c2=c2+1
+    num=num//10
+print("Number of digit even are : ",c1)
+print("Number of digit odd are : ",c2)
+
+
+Output : 
+Enter the number : 245566
+Number of digit even are :  4
+Number of digit odd are :  2
