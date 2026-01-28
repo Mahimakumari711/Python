@@ -1,0 +1,19 @@
+num=int(input("Enter the number : "))
+max=0
+min=9
+while(num>0) :
+    temp=num%10
+    if(temp<min) : 
+        min=temp
+    elif(temp>max) :
+        max=temp
+    num=num//10
+    
+print("Smallest digit is : " ,min)
+print("Largest digit is : " ,max)
+
+
+Output :
+Enter the number : 768952
+Smallest digit is :  2
+Largest digit is :  9
