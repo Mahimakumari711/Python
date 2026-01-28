@@ -1,0 +1,26 @@
+phy,chem,bio,math,comp=input("Enter the mark of physics, chemistry,biology,mathematics and computer : ").split()
+phy=int(phy)
+chem=int(chem)
+bio=int(bio)
+math=int(math)
+comp=int(comp)
+
+per=((phy+chem+bio+math+comp)/500)*100
+
+if per>=90 :
+    print("Grade : A")
+elif per>=80 and per<90 :
+    print("Grade : B")
+elif per>=70 and per<80 :
+    print("Grade : C")
+elif per>=60 and per<70 :
+    print("Grade : D")
+elif per>=40 and per<60 :
+    print("Grade : E")
+else :
+    print("Fail")
+
+
+Output : 
+Enter the mark of physics, chemistry,biology,mathematics and computer : 89 90 78 88 79
+Grade : B
