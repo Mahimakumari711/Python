@@ -1,0 +1,16 @@
+speed=int(input("Enter the speed : "))
+
+if speed<70 :
+    print("Ok")
+else :
+    temp=speed-70
+    point=temp/5
+    print("Points : ", point)
+    if point>12 :
+        print("Licence suspeded ")
+
+
+Output : 
+Enter the speed : 135
+Points :  13.0
+Licence suspeded
