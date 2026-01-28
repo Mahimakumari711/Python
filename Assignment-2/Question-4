@@ -1,0 +1,18 @@
+sal,year=input("Enter your salary and years of service : ").split()
+sal=int(sal)
+year=int(year)
+
+print("Your salary with bonus is : ")
+
+if year>10 :
+    print(sal+(sal*0.10))
+elif year >=6 and year <=10 :
+    print(sal+(sal*0.08))
+else :
+    print(sal+(sal*0.05))
+
+
+Output : 
+Enter your salary and years of service : 45000 7
+Your salary with bonus is : 
+48600.0
