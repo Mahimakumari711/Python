@@ -1,0 +1,22 @@
+num=int(input("Enter the Number : "))
+for i in range(10) :
+    count=0
+    temp=num
+    while(temp>0):
+        digit=temp%10
+        if(digit==i):
+            count=count+1
+        temp=temp//10
+    if(count>0):
+        print(i,":",count)
+
+
+Output : 
+Enter the Number : 3465987654
+3 : 1
+4 : 2
+5 : 2
+6 : 2
+7 : 1
+8 : 1
+9 : 1
