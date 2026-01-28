@@ -1,0 +1,17 @@
+age = int(input("Enter your age: "))
+
+if age < 12:
+    price = 5
+elif age < 18:
+    price = 10
+elif age < 60:
+    price = 20
+else:
+    price = 15
+
+print("Ticket price is:", price)
+
+
+Output : 
+Enter your age: 25
+Ticket price is: 20
