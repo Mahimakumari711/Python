@@ -1,0 +1,22 @@
+unit = int(input("Enter the electricity unit charges: "))
+
+if unit <= 50:
+    temp = unit * 0.50
+
+elif unit <= 150:
+    temp = (50 * 0.50) + (unit - 50) * 0.75
+
+elif unit <= 250:
+    temp = (50 * 0.50) + (100 * 0.75) + (unit - 150) * 1.20
+
+else:
+    temp = (50 * 0.50) + (100 * 0.75) + (100 * 1.20) + (unit - 250) * 1.50
+
+amount = temp + (temp * 0.20)
+
+print("Electricity bill is:", amount)
+
+
+Output : 
+Enter the electricity unit charges: 200
+Electricity bill is: 192.0
