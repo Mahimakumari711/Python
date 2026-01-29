@@ -1,0 +1,13 @@
+for i in range (1,101) :
+    num=i
+    while(num>0):
+        temp=num%10
+        if(temp==0) or (i%temp==0):
+            break 
+        num=num//10
+    else :
+        print(i,end=" ")
+
+
+Output : 
+23 27 29 34 37 38 43 46 47 49 53 54 56 57 58 59 67 68 69 73 74 76 78 79 83 86 87 89 94 97 98 
