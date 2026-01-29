@@ -1,0 +1,14 @@
+num=int(input("Enter the number : "))
+
+for i in range (1,num+1) :
+    sq=i**2
+    temp=sq%10
+    if(i==temp):
+        print(i," - ",sq)
+
+
+Output :
+Enter the number : 20
+1  -  1
+5  -  25
+6  -  36
