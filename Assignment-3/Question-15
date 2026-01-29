@@ -1,0 +1,16 @@
+num=int(input("Enter the number : "))
+temp=num
+s=0
+while(temp>0):
+    t=temp%10
+    temp=temp//10
+    s=s+t
+if(num%s==0):
+    print("Given number ",num," is harshad number ")
+else :
+    print("Given number is not harshad number ")
+
+
+Output :
+Enter the number : 24
+Given number  24  is harshad number
