@@ -1,0 +1,12 @@
+l=eval(input("Enter the list : "))
+for i in l :
+    if i>150 :
+        break
+    else :
+        if i%5==0 :
+            print(i,end=" ")
+
+
+Output :
+Enter the list : 12,25,45,160,23,20
+25 45 
