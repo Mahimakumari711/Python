@@ -1,0 +1,9 @@
+l=eval(input("Enter the list : "))
+for i in range(len(l)) :
+    if i%2==0 :
+        print(l[i],end=" ")
+
+
+Output :
+Enter the list : 12,13,14,15,16
+12 14 16
