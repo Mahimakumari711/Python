@@ -1,0 +1,10 @@
+l=eval(input("Enter the list : "))
+if l[0]==l[-1]:
+    print("True")
+else:
+    print("False")
+
+
+Output : 
+Enter the list : 10,11,12,10
+True
