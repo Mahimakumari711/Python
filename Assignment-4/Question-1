@@ -1,0 +1,18 @@
+for i in range (1,11):
+    cur=i
+    pre=i-1
+    res=cur+pre
+    print("Current No : ",cur , "  Previous No : ",pre ,"  Sum : ",res)
+
+
+Output :
+Current No :  1   Previous No :  0   Sum :  1
+Current No :  2   Previous No :  1   Sum :  3
+Current No :  3   Previous No :  2   Sum :  5
+Current No :  4   Previous No :  3   Sum :  7
+Current No :  5   Previous No :  4   Sum :  9
+Current No :  6   Previous No :  5   Sum :  11
+Current No :  7   Previous No :  6   Sum :  13
+Current No :  8   Previous No :  7   Sum :  15
+Current No :  9   Previous No :  8   Sum :  17
+Current No :  10   Previous No :  9   Sum :  19
