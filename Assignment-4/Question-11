@@ -1,0 +1,16 @@
+l1=eval(input("Enter the first list : "))
+l2=eval(input("Entyer the second list : "))
+res=[]
+for i in range(len(l1)):
+    if i%2==1 :
+        res.append(l1[i])
+for i in range(len(l2)) :
+    if i%2==0 :
+        res.append(l2[i])
+print(res)
+
+
+Output :
+Enter the first list : 11,12,13,14,15
+Entyer the second list : 16,17,18,19
+[12, 14, 16, 18]
