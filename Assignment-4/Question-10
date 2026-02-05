@@ -1,0 +1,18 @@
+n=int(input("Enter the integer : "))
+r=0
+sum=0
+for i in range(n) :
+    r=r*10+2
+    if i<n-1 :
+        print(r,end="+")
+    else :
+        print(r)
+    sum=sum+r
+print("\nSum of series is : ",sum)
+
+
+Output :
+Enter the integer : 4
+2+22+222+2222
+
+Sum of series is :  2468
