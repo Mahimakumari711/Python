@@ -1,0 +1,9 @@
+str=input("Enter the string : ")
+sub=input("Enter the sub string : ")
+print(str.find(sub))
+
+
+Output :
+Enter the string : Hi hi hi Hello
+Enter the sub string : hi
+3
