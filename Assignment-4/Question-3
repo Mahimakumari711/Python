@@ -1,0 +1,13 @@
+st=input("Enter the string : ")
+n=int(input("Enter the integer : "))
+if(n>len(st)):
+    print("Enter a valid integer ")
+else :
+    new_st=st[n:]
+print("New string after removing elements are : ", new_st)
+
+
+Output : 
+Enter the string : Hello Everyone
+Enter the integer : 6
+New string after removing elements are :  Everyone
