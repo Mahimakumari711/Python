@@ -1,0 +1,10 @@
+l=eval(input("Enter the list : "))
+ele=l.pop(4)
+l.insert(2,ele)
+l.insert(-1,ele)
+print(l)
+
+
+Output :
+Enter the list : [12,13,14,15,16,17,18]
+[12, 13, 16, 14, 15, 17, 16, 18]
