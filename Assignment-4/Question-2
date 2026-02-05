@@ -1,0 +1,9 @@
+st=input("Enter the string : ")
+for i in range(len(st)):
+    if(i%2==0):
+        print(st[i],end=" ")
+
+
+Output : 
+Enter the string : Hello, World
+H l o   o l
