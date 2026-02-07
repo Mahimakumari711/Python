@@ -1,0 +1,19 @@
+s = input("Enter the string : ")
+total = 0
+count = 0
+for ch in s:
+    if ch.isdigit():
+        total += int(ch)
+        count += 1
+if count > 0:
+    avg = total / count
+else:
+    avg = 0
+print("Sum of digits : ", total)
+print("Average of digits : ", avg)
+
+
+Output :
+Enter the string :  abc12345def
+Sum of digits :  15
+Average of digits :  3.0
