@@ -1,0 +1,23 @@
+s = input("Enter the string : ")
+lower = upper = digit = special = 0
+for ch in s:
+    if ch.islower():
+        lower += 1
+    elif ch.isupper():
+        upper += 1
+    elif ch.isdigit():
+        digit += 1
+    else:
+        special += 1
+print("Number of lowercase letters are : ", lower)
+print("Number of uppercase letters are : ", upper)
+print("Number of digits are : ", digit)
+print("Number of special symbols are : ", special)
+
+
+Output :
+Enter the string :  ABCDefgh1234@gmail.com##
+Number of lowercase letters are :  12
+Number of uppercase letters are :  4
+Number of digits are :  4
+Number of special symbols are :  4
