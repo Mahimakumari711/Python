@@ -1,0 +1,12 @@
+s1 = input("Enter first string : ")
+s2 = input("Enter second string : ")
+mid1 = len(s1) // 2
+mid2 = len(s2) // 2
+result = s1[0] + s1[mid1] + s1[-1] + s2[0] + s2[mid2] + s2[-1]
+print("New string:", result)
+
+
+Output :
+Enter first string :  Child
+Enter second string :  Games
+New string: CidGms
