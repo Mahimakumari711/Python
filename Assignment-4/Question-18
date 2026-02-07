@@ -1,0 +1,15 @@
+s = input("Enter the string : ")
+lc = ""
+oth = ""
+for ch in s:
+    if ch.islower():
+        lc += ch
+    else:
+        oth += ch
+result = lc + oth
+print("Rearranged string:", result)
+
+
+Output :
+Enter the string :  Apple MANGO orange
+Rearranged string: ppleorangeA MANGO 
