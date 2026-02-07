@@ -1,0 +1,11 @@
+s = input("Enter the string : ")
+if len(s) > 7 and len(s) % 2 != 0:
+    mid = len(s) // 2
+    print("Middle three characters are : ", s[mid-1:mid+2])
+else:
+    print("String length must be odd and greater than 7")
+
+
+Output :
+Enter the string :  Everyone 
+Middle three characters are :  ryo
