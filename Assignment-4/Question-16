@@ -1,0 +1,11 @@
+s1 = input("Enter first string : ")
+s2 = input("Enter second string : ")
+mid = len(s1) // 2
+s = s1[:mid] + s2 + s1[mid:]
+print("New string:", s)
+
+
+Output :
+Enter first string :  ABCDHIJK
+Enter second string :  EFG
+New string: ABCDEFGHIJK
