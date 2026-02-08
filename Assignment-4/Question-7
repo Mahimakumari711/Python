@@ -1,5 +1,5 @@
 l1=eval(input("Enter the first list : "))
-l2=eval(input("Entyer the second list : "))
+l2=eval(input("Enter the second list : "))
 res=[]
 for i in l1 :
     if i%2==1 :
@@ -12,5 +12,5 @@ print(res)
 
 Output : 
 Enter the first list : 1,2,3,4,5
-Entyer the second list : 6,7,8,9
+Enter the second list : 6,7,8,9
 [1, 3, 5, 6, 8]
