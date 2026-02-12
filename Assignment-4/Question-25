@@ -1,0 +1,16 @@
+l=eval(input("Enter the value of list : "))
+a=[]
+for i in l :
+    if i not in a :
+        a.append(i)
+        print(i," : ",l.count(i))
+
+
+Output :
+Enter the value of list : [1,2,3,4,5,6,5,4,3,1,2,4,5,2]
+1  :  2
+2  :  3
+3  :  2
+4  :  3
+5  :  3
+6  :  1
