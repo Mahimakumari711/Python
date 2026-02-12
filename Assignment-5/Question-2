@@ -1,0 +1,10 @@
+t=input("Enter the value of tuple : ")
+t=tuple(t)
+print("Third element from beginning is : ",t[2])
+print("Fourth element from end is : ",t[-4])
+
+
+Output :
+Enter the value of tuple : 123456789
+Third element from beginning is :  3
+Fourth element from end is :  6
