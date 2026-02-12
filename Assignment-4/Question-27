@@ -1,0 +1,16 @@
+l1=eval(input("Enter the value of first list : "))
+l2=eval(input("Enter the value of second list : "))
+l3=[]
+for i in l1 :
+    if i in l2 :
+        l3.append(i)
+if l3 :
+    print("They have atleast one common element ")
+else :
+    print("They do not have common element ")
+
+
+Output :
+Enter the value of first list : [1,2,3,4]
+Enter the value of second list : [2,6,7,8]
+They have atleast one common element 
