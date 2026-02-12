@@ -1,0 +1,9 @@
+t1=(5,'welcome',7.2,[1,2])
+t2=tuple()
+print("Tuple with different data : ",t)
+print("Empty tuple : ",t2)
+
+
+Output :
+Tuple with different data :  (5, 'welcome', 7.2, [1, 2])
+Empty tuple :  ()
