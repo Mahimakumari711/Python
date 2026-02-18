@@ -1,0 +1,8 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+tup = tuple(element for element in tup if element % 2 == 0) 
+print("After removing odd number elements:", tup) 
+
+
+Output :
+Enter the tuple of elements:  (11,12,13,14,15,16,17)
+After removing odd number elements: (12, 14, 16)
