@@ -1,0 +1,16 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+seen = [ ] 
+for element in tup: 
+    if element not in seen: 
+        print(element, ":", tup.count(element)) 
+        seen.append(element)
+
+
+Output :
+Enter the tuple of elements:  (11,23,34,56,43,23,45,23,11)
+11 : 2
+23 : 3
+34 : 1
+56 : 1
+43 : 1
+45 : 1
