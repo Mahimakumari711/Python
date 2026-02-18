@@ -1,0 +1,15 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+print("There are", len(tup), "elements in the tuple") 
+tup += (eval(input("Enter a element to add: ")),) 
+lst = list(tup) 
+lst.append(eval(input("Enter another element to add: "))) 
+tup = tuple(lst) 
+print(tup)
+
+
+Output :
+Enter the tuple of elements:  (11,22,33,44,88)
+There are 5 elements in the tuple
+Enter a element to add:  66
+Enter another element to add:  77
+(11, 22, 33, 44, 88, 66, 77)
