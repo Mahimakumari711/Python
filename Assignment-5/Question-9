@@ -1,0 +1,7 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+print("Elements sorted in descending order:", tuple(sorted(tup, reverse=True)))
+
+
+Output :
+Enter the tuple of elements:  (12,34,56,65,32,90,34,)
+Elements sorted in descending order: (90, 65, 56, 34, 34, 32, 12)
