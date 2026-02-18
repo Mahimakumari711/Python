@@ -8,3 +8,6 @@ print("Common element are : ",l3)
 
 
 Output :
+Enter the value of first list :  [11,22,33,44,55]
+Enter the value of second list :  [33,44,55,66,77,88]
+Common element are :  [33, 44, 55]
