@@ -1,0 +1,7 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+print(tup and tup[0] == tup[-1])
+
+
+Output :
+Enter the tuple of elements:  12,34,56,67,89,66,43,12
+True
