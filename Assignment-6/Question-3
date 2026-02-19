@@ -1,0 +1,31 @@
+d={"Jan":31,"Feb":28,"Mar":31,"Apr":30,"May":31,"Jun":30,"Jul":31,"Aug":31,"Sept":30,"Oct":31,"Nov":30,"Dec":31}
+mon=input("Enter the month : ")
+print("Number of days in ",mon," month is : ",d[mon])
+print("\n")
+l=d.keys()
+l2=d.values()
+print("Keys in sorted order is : ",sorted(l))
+print("\n")
+print("Month with 31 days is : ")
+for m in d :
+    if d[m]==31 :
+        print(m,end=",")
+print("\n")
+result=sorted(d.items(),key=lambda x:x[1])
+print("Key-value pairs sorted by the number of days in each month is : ")
+print(result)
+
+
+Output :
+Enter the month : Oct
+Number of days in  Oct  month is :  31
+
+
+Keys in sorted order is :  ['Apr', 'Aug', 'Dec', 'Feb', 'Jan', 'Jul', 'Jun', 'Mar', 'May', 'Nov', 'Oct', 'Sept']
+
+
+Month with 31 days is : 
+Jan,Mar,May,Jul,Aug,Oct,Dec,
+
+Key-value pairs sorted by the number of days in each month is : 
+[('Feb', 28), ('Apr', 30), ('Jun', 30), ('Sept', 30), ('Nov', 30), ('Jan', 31), ('Mar', 31), ('May', 31), ('Jul', 31), ('Aug', 31), ('Oct', 31), ('Dec', 31)]
