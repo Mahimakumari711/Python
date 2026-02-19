@@ -1,0 +1,11 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+res = tup[0] 
+for element in tup[1:]:
+    if element > res: 
+        res = element 
+print("The largest element is:", res)
+
+
+Output :
+Enter the tuple of elements:  12,23,56,90,76,43
+The largest element is: 90
