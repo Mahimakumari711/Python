@@ -1,0 +1,9 @@
+lst = list(eval(input("Enter the list of tuples: "))) 
+for i in range(len(lst)): 
+    lst[i] = lst[i][:-1] + (100,) 
+print("After replacing last element with 100:", lst)
+
+
+Output :
+Enter the list of tuples:  [(1,2,3),(4,5,6),(7,8,9)]
+After replacing last element with 100: [(1, 2, 100), (4, 5, 100), (7, 8, 100)]
