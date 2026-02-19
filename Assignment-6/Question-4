@@ -1,0 +1,9 @@
+d={'k1':'v1', 'k2':'v2', 'k3':'v3'}
+l1=d.keys()
+l2=d.values()
+d1={k:v for (k,v) in zip(l2,l1)}
+print(d1)
+
+
+Output :
+{'v1': 'k1', 'v2': 'k2', 'v3': 'k3'}
