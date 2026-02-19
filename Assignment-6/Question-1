@@ -1,0 +1,8 @@
+str=input("Enter the string : ")
+d={ch:str.count(ch) for ch in str}
+print(d)
+
+
+Output :
+Enter the string : Apple
+{'A': 1, 'p': 2, 'l': 1, 'e': 1}
