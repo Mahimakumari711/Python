@@ -1,0 +1,8 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+new_tup = tuple(element for element in tup if element % 2 == 0) 
+print("Tuple with only even numbers are:", new_tup)
+
+
+Output :
+Enter the tuple of elements:  12,23,34,56,75,49,29
+Tuple with only even numbers are: (12, 34, 56)
