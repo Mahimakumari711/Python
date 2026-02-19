@@ -1,0 +1,7 @@
+tup = eval(input("Enter the tuple of elements: ")) 
+print("Square of each element is:", tuple(element ** 2 for element in tup)) 
+
+
+Output :
+Enter the tuple of elements:  (5,7,8)
+Square of each element is: (25, 49, 64)
