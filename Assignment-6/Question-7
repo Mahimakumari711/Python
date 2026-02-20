@@ -1,0 +1,20 @@
+d1 = eval(input("Enter first dictionary : "))
+d2 = eval(input("Enter second dictionary : "))
+if d1.items() <= d2.items():
+    print("d1 is contained in d2")
+elif d2.items() <= d1.items():
+    print("d2 is contained in d1")
+else:
+    print("Neither dictionary is contained in the other")
+
+
+Output1 :
+Enter first dictionary :  {1:11, 2:12} 
+Enter second dictionary :  {1:11, 2:12, 3:13, 4:15} 
+d1 is contained in d2
+
+
+Output2 :
+Enter first dictionary :  {'a':10,'b':20,'c':30,'d':40} 
+Enter second dictionary :  {'a':10,'b':20}
+d2 is contained in d1
