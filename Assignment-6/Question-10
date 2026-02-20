@@ -1,0 +1,82 @@
+friends = {}
+
+n = int(input("Enter the number of friends : "))
+
+for i in range(n):
+    name = input("Enter the friend's name : ")
+    phone = input("Enter the phone number : ")
+    friends[name] = phone
+
+print("\nAll Friends:")
+for name, phone in friends.items():
+    print(name, " : ", phone)
+
+new_name = input("\nEnter new friend's name : ")
+new_phone = input("Enter phone number : ")
+friends[new_name] = new_phone
+print("After adding new friend details : ", friends)
+
+delete_name = input("\nEnter friend's name to delete : ")
+if delete_name in friends:
+    del friends[delete_name]
+    print("Friend deleted successfully.")
+else:
+    print("Friend not found.")
+print("Dictionary after deleting name : ", friends)
+
+modify_name = input("\nEnter friend's name to modify phone number : ")
+if modify_name in friends:
+    new_phone = input("Enter new phone number : ")
+    friends[modify_name] = new_phone
+    print("Phone number updated.")
+else:
+    print("Friend not found.")
+print("Dictionary after changing the phone number : ", friends)
+
+check_name = input("\nEnter friend's name to check : ")
+if check_name in friends:
+    print("Friend is present in dictionary.")
+else:
+    print("Friend is not present.")
+
+print("\nFriends in sorted order : ")
+for name in sorted(friends):
+    print(name, ":", friends[name])
+
+
+
+Output :
+
+Enter the number of friends :  3
+Enter the friend's name :  Ram
+Enter the phone number :  1234
+Enter the friend's name :  Sita
+Enter the phone number :  4567
+Enter the friend's name :  Gita
+Enter the phone number :  6789
+
+All Friends:
+Ram  :  1234
+Sita  :  4567
+Gita  :  6789
+
+Enter new friend's name :  Shayam
+Enter phone number :  34567
+After adding new friend details :  {'Ram': '1234', 'Sita': '4567', 'Gita': '6789', 'Shayam': '34567'}
+
+Enter friend's name to delete :  Gita
+Friend deleted successfully.
+Dictionary after deleting name :  {'Ram': '1234', 'Sita': '4567', 'Shayam': '34567'}
+
+Enter friend's name to modify phone number :  Sita
+Enter new phone number :  9090
+Phone number updated.
+Dictionary after changing the phone number :  {'Ram': '1234', 'Sita': '9090', 'Shayam': '34567'}
+
+Enter friend's name to check :  Shayam
+Friend is present in dictionary.
+
+Friends in sorted order : 
+Ram : 1234
+Shayam : 34567
+Sita : 9090
