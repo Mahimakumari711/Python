@@ -1,11 +1,8 @@
-num=input("Enter the number : ")
-d={1:"One",2:"Two",3:"Three",4:"Four",5:"Five",6:"Six",7:"Seven",8:"Eight",9:"Nine",0:"Zero"}
-l1=[]
-l2=d.keys()
-l2=list(l2)
-for k in num:
-    if k in l2 :
-        l1.append(d[k])
-print(k)
-print(d[k])
-print(l1)
+num = input("Enter the number: ")
+d = {'0':"Zero",'1':"One",'2':"Two",'3':"Three",'4':"Four",'5':"Five",'6':"Six",'7':"Seven",'8':"Eight",'9':"Nine"}
+print("Number in words is : ", " ".join(d[digit] for digit in num))
+
+
+Output :
+Enter the number:  678
+Number in words is :  Six Seven Eight
