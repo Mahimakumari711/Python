@@ -1,5 +1,15 @@
+Method 1 :
+
 d1 = eval(input("Enter dictionary: "))
 d2 = {key: sum(value) for key, value in d1.items()}
+print("New dictionary:", d2)
+
+Method 2 :
+
+d1 = eval(input("Enter dictionary: "))
+d2 = {}
+for key in d1:
+    d2[key] = sum(d1[key])
 print("New dictionary:", d2)
 
 
