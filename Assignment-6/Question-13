@@ -1,0 +1,13 @@
+d = eval(input("Enter dictionary: "))
+inverted = {}
+for key, value in d.items():
+    if value not in inverted:
+        inverted[value] = [key]   
+    else:
+        inverted[value].append(key)  
+print("Inverted dictionary:", inverted)
+
+
+Output :
+Enter dictionary:  {'a':1, 'b':2, 'c':1,'d':3, 'e':2} 
+Inverted dictionary: {1: ['a', 'c'], 2: ['b', 'e'], 3: ['d']}
