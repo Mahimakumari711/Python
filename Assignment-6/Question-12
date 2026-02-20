@@ -1,0 +1,10 @@
+d1 = eval(input("Enter first dictionary: "))
+d2 = eval(input("Enter second dictionary: "))
+common_keys = d1.keys() & d2.keys()
+print("Common keys:", common_keys)
+
+
+Output :
+Enter first dictionary:  {'a':10,'b':20,'c':30,'d':40}
+Enter second dictionary:  {'b':20,'c':30}
+Common keys: {'c', 'b'}
