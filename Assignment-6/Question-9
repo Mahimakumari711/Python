@@ -1,0 +1,21 @@
+ODD = {1:"One", 3:"Three", 5:"Five", 7:"Seven", 9:"Nine"}
+print("Keys : ", ODD.keys())
+print("Values : ", ODD.values())
+print("Items : ", ODD.items())
+print("Length : ", len(ODD))
+print("7 is present" if 7 in ODD else "7 is not present")
+print("2 is present" if 2 in ODD else "2 is not present")
+print("Value of 9 : ", ODD[9])
+del ODD[9]
+print("Dictionary after deleting 9 key element is : ", ODD)
+
+
+Output :
+Keys :  dict_keys([1, 3, 5, 7, 9])
+Values :  dict_values(['One', 'Three', 'Five', 'Seven', 'Nine'])
+Items :  dict_items([(1, 'One'), (3, 'Three'), (5, 'Five'), (7, 'Seven'), (9, 'Nine')])
+Length :  5
+7 is present
+2 is not present
+Value of 9 :  Nine
+Dictionary after deleting 9 key element is :  {1: 'One', 3: 'Three', 5: 'Five', 7: 'Seven'}
