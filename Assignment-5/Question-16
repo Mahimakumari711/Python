@@ -1,0 +1,8 @@
+lst = list(eval(input("Enter the list of tuples : "))) 
+lst=sorted(lst,key=lambda element : element[1], reverse=True) 
+print("After sorting : ", lst) 
+
+
+Output :
+Enter the list of tuples :  [("item1","12.20"),("item2","15.10"),("item3","24.5")]
+After sorting :  [('item3', '24.5'), ('item2', '15.10'), ('item1', '12.20')]
