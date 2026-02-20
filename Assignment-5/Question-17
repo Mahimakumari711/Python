@@ -1,0 +1,13 @@
+import ast
+tup =ast.literal_eval(input("Enter the tuple of elements: "))
+res = 0 
+for element in tup : 
+    if isinstance(element,list) : 
+        break 
+    res += 1 
+print("Count is:", res) 
+
+
+Output :
+Enter the tuple of elements:  12,34,54,[98,76,52],90
+Count is: 3
