@@ -1,0 +1,10 @@
+tup1 = eval(input("Enter the tuple of elements: ")) 
+tup2 = eval(input("Enter the tuple of elements: ")) 
+tup1, tup2 = tup2, tup1 
+print("Tuple after swaping : ", tup1, tup2)
+
+
+Output :
+Enter the tuple of elements:  (34,56,78)
+Enter the tuple of elements:  (90,76,52)
+Tuple after swaping :  (90, 76, 52) (34, 56, 78)
