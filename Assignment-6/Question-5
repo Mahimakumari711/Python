@@ -1,0 +1,30 @@
+Method 1 : ( Using list )
+
+d1 = eval(input("Enter first dictionary : "))
+d2 = eval(input("Enter second dictionary : "))
+same_key = []
+for k in d1:
+    if k in d2:
+        same_key.append(k)
+print("Overlapping keys are : ", same_key)
+
+
+Output :
+Enter first dictionary :  {1:"apple",2:"ball",3:"cat"} 
+Enter second dictionary :  {2:"bat",4:"cow",5:"dog",3:"fish"}
+Overlapping keys are :  [2, 3]
+
+
+
+Method 1 : ( Using and operator (&) )
+
+d1 = eval(input("Enter first dictionary: "))
+d2 = eval(input("Enter second dictionary: "))
+same_key = d1.keys() & d2.keys()
+print("Overlapping keys are : ", list(same_key))
+
+
+Output :
+Enter first dictionary:  {1:"apple",2:"ball",3:"cat"}
+Enter second dictionary:  {2:"bat",4:"cow",5:"dog",3:"fish"}
+Overlapping keys are :  [2, 3]
