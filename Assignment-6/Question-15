@@ -1,0 +1,20 @@
+numbers = input("Enter numbers separated by space: ").split(",")
+count = {}
+for num in numbers:
+    num = num.strip()  # Remove extra spaces
+    count[num] = count.get(num, 0) + 1
+
+print("\nNumber counts:")
+for num, freq in count.items():
+    print(f"{num}: {freq}")
+
+
+Output :
+Enter numbers separated by space:  11,22,33,44,55,11,22,33,33,55,33
+
+Number counts:
+11: 2
+22: 2
+33: 4
+44: 1
+55: 2
