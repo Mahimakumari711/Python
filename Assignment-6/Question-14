@@ -1,0 +1,15 @@
+s = input("Enter a string : ")
+freq = {}
+for char in s : 
+    freq[char] = freq.get(char, 0) + 1
+result = None
+for char in s:
+    if freq[char] == 1:
+        result = char
+        break
+print("First non-repeating character is : ", result)
+
+
+Output :
+Enter a string :  aabbcccdee
+First non-repeating character is :  d
