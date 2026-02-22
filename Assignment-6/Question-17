@@ -1,0 +1,8 @@
+d= ast.literal_eval(input("Enter the values for dictionary : "))
+s_d = dict(sorted(d.items(), key=lambda item: item[1]))
+print(s_d)
+
+
+Output :
+Enter the values for dictionary :  {1:'23',2:'76',3:'90',0:'54'}
+{1: '23', 0: '54', 2: '76', 3: '90'}
