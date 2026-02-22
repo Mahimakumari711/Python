@@ -1,0 +1,14 @@
+import ast
+words = ast.literal_eval(input("Enter the words : "))
+word_dict = {}
+for word in words:
+    length = len(word)
+    if length not in word_dict:
+        word_dict[length] = []
+    word_dict[length].append(word)
+print(word_dict)
+
+
+Output :
+Enter the words :  ["Cow","123","Dog","monkey","donkey","King fisher"]
+{3: ['Cow', '123', 'Dog'], 6: ['monkey', 'donkey'], 11: ['King fisher']}
