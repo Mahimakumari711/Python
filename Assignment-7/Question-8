@@ -1,18 +1,20 @@
-def lar(num):
-    if num == 0:
-        return 0
-    largest=0
-    while num > 0:
-        digit = num % 10
-        if digit > largest:
-            largest = digit
-        num = num // 10
-    return largest
+def is_perfect(num):
+    if num <= 0:
+        return False
+    
+    sum_divisors = 1 
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            sum_divisors += i
+            if i != num // i:  
+                sum_divisors += num // i
+    
+    return sum_divisors == num
 
 n = int(input("Enter the number: "))
-print("Largest digit in given number is : ",lar(n))
+print("Perfect" if is_perfect(n) else "Not Perfect")
 
 
 Output :
-Enter the number: 89769
-Largest digit in given number is :  9
+Enter the number: 6
+Perfect
