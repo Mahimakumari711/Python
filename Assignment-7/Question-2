@@ -1,0 +1,16 @@
+def is_armstrong(num) :
+    s = str(num)
+    l = len(s)
+    temp = sum(int(i) ** l for i in s)
+    if (temp == num) :
+        print("Given number is armstrong number ")
+    else :
+        print("Given number is not a armstrong number ")
+
+n=int(input("Enter the value : "))
+is_armstrong(n) 
+
+
+Output :
+Enter the value : 153
+Given number is armstrong number 
