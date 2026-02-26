@@ -1,0 +1,13 @@
+def d_sum(a) :
+    if a==0 :
+        return a
+    else :
+        return d_sum(a//10)+a%10
+
+num=int(input("Enter the number : "))
+print("Sum of digit is : ",d_sum(num))
+
+
+Output :
+Enter the number : 456
+Sum of digit is :  15
