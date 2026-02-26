@@ -1,0 +1,17 @@
+def rotate_right(num, k):
+    s = str(num)
+    n = len(s)
+    k = k % n
+    rotated = s[n-k:] + s[:n-k]
+    return int(rotated)
+
+n = int(input("Enter the number: "))
+k = int(input("Enter the number for rotation: "))
+result = rotate_right(n, k)
+print(result)
+
+
+Output :
+Enter the number: 12345
+Enter the number for rotation: 2
+45123
