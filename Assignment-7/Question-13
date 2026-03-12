@@ -1,0 +1,19 @@
+import ast
+
+def r_duplicates(arr):
+    seen = []
+    
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    
+    return seen
+
+lst = ast.literal_eval(input("Enter the value of list : "))
+res = r_duplicates(lst)
+print(f"List after removing dublicate element : {res}") 
+
+
+Output :
+Enter the value of list : [1,2,3,1,2,3,2,2,3,1,3]
+List after removing dublicate element : [1, 2, 3]
