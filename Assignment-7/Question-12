@@ -1,0 +1,18 @@
+def vowels(s):
+    v = set('aeiouAEIOU')
+    count = 0
+    
+    for char in s:
+        if char in v:
+            count += 1
+    
+    return count
+
+st=input("Enter the string : ")
+result = vowels(st)
+print(f"Number of vowels: {result}") 
+
+
+Output :
+Enter the string : Hi Everyone Over there 
+Number of vowels: 9
