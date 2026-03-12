@@ -1,0 +1,33 @@
+def next_greater_number(num):
+    digits = list(str(num))
+    
+    i = len(digits) - 2
+    while i >= 0 and digits[i] >= digits[i + 1]:
+        i -= 1
+    
+    
+    if i == -1:
+        return "Not Possible"
+    
+    j = len(digits) - 1
+    while digits[j] <= digits[i]:
+        j -= 1
+    
+    digits[i], digits[j] = digits[j], digits[i]
+    
+ 
+    left, right = i + 1, len(digits) - 1
+    while left < right:
+        digits[left], digits[right] = digits[right], digits[left]
+        left += 1
+        right -= 1
+    
+  
+    return int(''.join(digits))
+
+num=int(input("Enter the number : "))
+print(next_greater_number(num))  
+
+Output :
+Enter the number : 5342
+5423
