@@ -1,0 +1,11 @@
+
+print((lambda x: x * x)(7)) 
+
+
+numbers = [1, 2, 3, 4]
+squares = list(map(lambda x: x * x, numbers))
+print(squares)  
+
+op 
+49
+[1, 4, 9, 16]
