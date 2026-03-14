@@ -1,0 +1,12 @@
+a=int(input("Enter the first number : "))
+b=int(input("Enter the second number : "))
+c=int(input("Enter the third number : "))
+max_three = lambda a, b, c: a if a > b and a > c else (b if b > c else c)
+print("Maximum nunber is : ",max_three(a,b,c))  
+
+
+Output :
+Enter the first number :  89
+Enter the second number :  65
+Enter the third number :  90
+Maximum nunber is :  90
