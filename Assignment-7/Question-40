@@ -1,0 +1,11 @@
+from functools import reduce
+import ast
+
+num = ast.literal_eval(input("Enter the value of list : "))
+doubled_sum = reduce(lambda x, y: x + y, map(lambda x: x * 2, num))
+print("Result : ",doubled_sum)
+
+
+Output :
+Enter the value of list :  1,2,3,4,5
+Result :  30
