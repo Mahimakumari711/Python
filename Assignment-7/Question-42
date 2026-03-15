@@ -1,0 +1,11 @@
+from functools import reduce
+
+sentence = input("Enter the sentence : ")
+words = sentence.split()
+total_chars = reduce(lambda x, y: x + y, map(lambda word: len(word), words))
+print("Total number of character iin sentence is ",total_chars)  
+
+
+Output :
+Enter the sentence :  The quick brown fox jumps over lazy dog
+Total number of character iin sentence is  32
