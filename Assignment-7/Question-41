@@ -1,0 +1,10 @@
+import ast
+
+word = ast.literal_eval(input("Enter the words : "))
+palindromes = list(filter(lambda word: word == word[::-1], word))
+print(palindromes)
+
+
+Ouput :
+Enter the words :  'pop','non','none','hii','noon'
+['pop', 'non', 'noon']
