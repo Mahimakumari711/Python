@@ -1,0 +1,11 @@
+from functools import reduce
+import ast
+
+s = ast.literal_eval(input("Enter the words : "))
+total_chars = reduce(lambda x, y: x + len(y), s, 0)
+print("Number of character ",total_chars)
+
+
+Output :
+Enter the words :  'hi','everyone','good','morning'
+Number of character  21
