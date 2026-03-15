@@ -1,0 +1,10 @@
+import ast
+
+celsius=ast.literal_eval(input("Enter the value of list : ")) 
+fahrenheit = list(map(lambda c: (c * 9/5) + 32, celsius))
+print("Temperature in fahrenheit ",fahrenheit)  
+
+
+Output :
+Enter the value of list :  34,56,87,90
+Temperature in fahrenheit  [93.2, 132.8, 188.6, 194.0]
