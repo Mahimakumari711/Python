@@ -1,0 +1,8 @@
+s=input("Enter the value : ")
+reverse = lambda s: ''.join([char for char in reversed(s)])
+print("Reverse string : ",reverse(s))
+
+
+Output : 
+Enter the value :  Hi everyone
+Reverse string :  enoyreve iH
