@@ -1,0 +1,8 @@
+num=int(input("Enter the number : "))
+is_even = lambda num: print("Number is even ") if num % 2 == 0 else print("Number is odd ")
+is_even(num)
+
+
+Output :
+Enter the number :  12
+Number is even 
