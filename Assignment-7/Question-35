@@ -1,0 +1,11 @@
+from functools import reduce
+import ast
+
+num = ast.literal_eval(input("Enter the value of list : "))
+product = reduce(lambda x, y: x * y, num)
+print("Product of all element in list is ",product)
+
+
+Output :
+Enter the value of list :  1,2,3,4,5
+Product of all element in list is  120
