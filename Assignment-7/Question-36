@@ -1,0 +1,11 @@
+from functools import reduce
+import ast
+
+num = ast.literal_eval(input("Enter the value of list : "))
+largest = reduce(lambda x, y: x if x > y else y, num)
+print("Largest element is ",largest)  
+
+
+Output :
+Enter the value of list :  23,45,90,56,78
+Largest element is  90
