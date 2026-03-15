@@ -1,0 +1,11 @@
+from functools import reduce
+import ast
+
+num = ast.literal_eval(input("Enter the value of list : "))
+total = reduce(lambda x, y: x + y, num)
+print("Sum of all element in list is ",total)
+
+
+Output :
+Enter the value of list :  1,2,3,4,5
+Sum of all element in list is  15
