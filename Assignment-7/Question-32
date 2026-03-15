@@ -1,0 +1,8 @@
+text = input("Enter the word : ")
+vowel_string = ''.join(filter(lambda char: char.lower() in 'aeiou', text))
+print(vowel_string) 
+
+
+Output :
+Enter the word :  good Morning
+oooi
