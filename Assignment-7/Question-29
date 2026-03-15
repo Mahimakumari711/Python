@@ -1,0 +1,10 @@
+import ast
+
+num=ast.literal_eval(input("Enter the value of list : ")) 
+even_numbers = list(filter(lambda x: x % 2 == 0, num))
+print("Even number are : ",even_numbers)
+
+
+Output :
+Enter the value of list :  12,23,45,67,78,80,90
+Even number are :  [12, 78, 80, 90]
