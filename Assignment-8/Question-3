@@ -1,0 +1,23 @@
+class Car :
+    def __init__(self,brand,model,year) :
+        self.brand=brand
+        self.model=model
+        self.year=year
+    def show_details(self) :
+        print("Brand of car : ",self.brand,"\nModel of car : ",self.model,"\nYear of car : ",self.year)
+        
+        
+b=input("Enter the brand of car : ")
+m=input("Enter the model of car : ")
+y=int(input("Enter the year of car : "))
+c1=Car(b,m,y)
+c1.show_details()
+
+
+Output :
+Enter the brand of car : Tesla
+Enter the model of car : AU890
+Enter the year of car : 2025
+Brand of car :  Tesla 
+Model of car :  AU890 
+Year of car :  2025
