@@ -1,0 +1,43 @@
+class BankAccount :
+        def __init__(self,account_holder,balance) :
+            self.account_holder=account_holder
+            self.balance=balance
+        
+        def deposit(self,amount) :
+            self.balance=amount+self.balance
+            return self.balance
+        
+        def withdraw(self,amount) :
+            if (self.balance<amount) :
+                print("Withdraw denied ")
+            else :
+                self.balance-=amount
+                return self.balance
+        
+        def display_balance(self) :
+            print("Name : ",self.account_holder,"\nCurrent Balance : ",self.balance)
+        
+n=input("Enter the name of account holder : ")
+b=int(input("Enter the balance : "))
+amt1=int(input("Enter the amount for deposite : "))
+amt2=int(input("Enter the amount for withdraw : "))
+
+acc1=BankAccount(n,b)
+acc1.display_balance()
+print("Balance after deposting ",amt1," is ",acc1.deposit(amt1))
+print("Balance after withdrawing ",amt2," is ",acc1.withdraw(amt2))
+acc1.display_balance()
+
+
+Output :
+Enter the name of account holder : Rahul Kumar
+Enter the balance : 2000
+Enter the amount for deposite : 200
+Enter the amount for withdraw : 500
+Name :  Rahul Kumar 
+Current Balance :  2000
+Balance after deposting  200  is  2200
+Balance after withdrawing  500  is  1700
+Name :  Rahul Kumar 
+Current Balance :  1700
+​
