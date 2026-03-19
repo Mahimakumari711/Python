@@ -1,0 +1,21 @@
+class Circle :
+    def __init__(self,rad) :
+        self.rad=rad
+    
+    def area(self) :
+        return 3.14*self.rad*self.rad
+    
+    def cir(self) :
+        return 2*self.rad*3.14
+    
+r=int(input("Enter the radius of circle : "))
+
+a=Circle(r)
+print("Area of circle is ",a.area())
+print("Circumference of circle is ",a.cir())
+
+
+Output :
+Enter the radius of circle : 2
+Area of circle is  12.56
+Circumference of circle is  12.56
