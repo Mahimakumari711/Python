@@ -14,3 +14,10 @@ per = int(input("Enter the percent to increase the salary : "))
 employee = Employee(n, s)
 
 print("Salary after increasing by", per, "% is :", employee.increase_salary(per))
+
+Output :
+
+Enter the name of Employee :  Ram Kumar 
+Enter the salary :  45000
+Enter the percent to increase the salary :  10
+Salary after increasing by 10 % is : 49500.0
