@@ -1,0 +1,20 @@
+class Temperature:
+    def __init__(self, celsius):
+        self.celsius = celsius
+    
+    def to_fahrenheit(self):
+        return 9 / 5 * self.celsius + 32
+    
+    def to_kelvin(self):
+        return 273.15 + self.celsius
+
+celsius = float(input("Enter temperature in celsius: "))
+temperature = Temperature(celsius)
+print("Fahrenheit:", temperature.to_fahrenheit())
+print("Kelvin:", temperature.to_kelvin())
+
+Output :
+
+Enter temperature in celsius:  25
+Fahrenheit: 77.0
+Kelvin: 298.15
