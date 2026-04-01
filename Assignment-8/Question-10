@@ -1,0 +1,56 @@
+class Cart:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item, price):
+        self.items[item] = price
+
+    def remove_item(self, item):
+        if item in self.items:
+            del self.items[item]
+            print(item, "removed from cart.")
+        else:
+            print(item, "not found in cart.")
+
+    def total_price(self):
+        return sum(self.items.values())
+
+    def display_items(self):
+        if not self.items:
+            print("Cart is empty.")
+        else:
+            print("Items in cart:")
+            for item, price in self.items.items():
+                print(item, ":", price)
+cart = Cart()
+n = int(input("Enter number of items: "))
+for i in range(n):
+    item = input("Enter item name: ")
+    price = int(input("Enter price: "))
+    cart.add_item(item, price)
+
+cart.display_items()
+remove = input("Enter item to remove: ")
+cart.remove_item(remove)
+cart.display_items()
+print("Total price:", cart.total_price())
+
+Output :
+
+Enter number of items:  3
+Enter item name:  Milk
+Enter price:  25
+Enter item name:  Bread
+Enter price:  15
+Enter item name:  Cheese
+Enter price:  10
+Items in cart:
+Milk : 25
+Bread : 15
+Cheese : 10
+Enter item to remove:  Cheese
+Cheese removed from cart.
+Items in cart:
+Milk : 25
+Bread : 15
+Total price: 40
