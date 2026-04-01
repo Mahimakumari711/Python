@@ -1,0 +1,27 @@
+class Book:
+    def __init__(self, title, author, price):
+        self.title = title
+        self.author = author
+        self.price = price
+    
+    def apply_discount(self, percentage):
+        self.price *= 1 - percentage / 100
+    
+    def display(self):
+        print(f"Book(title={self.title}, author={self.author}, price={self.price})")
+
+name = input("Enter the title: ")
+author = input("Enter the author: ")
+price = float(input("Enter the price: "))
+book = Book(name, author, price)
+percentage = float(input("Enter the percentage of discount to apply: "))
+book.apply_discount(percentage)
+book.display()
+
+Output :
+
+Enter the title:  Eight Lives
+Enter the author:  Rajmohan Gandhi 
+Enter the price:  250
+Enter the percentage of discount to apply:  20
+Book(title=Eight Lives, author=Rajmohan Gandhi , price=200.0)
