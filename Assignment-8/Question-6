@@ -1,0 +1,16 @@
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def increase_salary(self, percent):
+        return self.salary * (percent / 100) + self.salary
+
+
+n = input("Enter the name of Employee : ")
+s = int(input("Enter the salary : "))
+per = int(input("Enter the percent to increase the salary : "))
+
+employee = Employee(n, s)
+
+print("Salary after increasing by", per, "% is :", employee.increase_salary(per))
