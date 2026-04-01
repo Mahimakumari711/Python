@@ -1,0 +1,39 @@
+class Stack:
+    def __init__(self):
+        self.s = []
+    def push(self, x):
+        self.s.append(x)
+    def pop(self):
+        print("Popped:", self.s.pop() if self.s else "Stack empty")
+    def display(self):
+        print("Stack:", self.s if self.s else "Empty")
+st = Stack()
+while True:
+    c = input("\n1.Push 2.Pop 3.Display 4.Exit : ")
+    if c == '1':
+        st.push(input("Enter element: "))
+    elif c == '2':
+        st.pop()
+    elif c == '3':
+        st.display()
+    else:
+        break
+
+Output :
+
+1.Push 2.Pop 3.Display 4.Exit :  1
+Enter element:  12
+
+1.Push 2.Pop 3.Display 4.Exit :  1
+Enter element:  23
+
+1.Push 2.Pop 3.Display 4.Exit :  1
+Enter element:  45
+
+1.Push 2.Pop 3.Display 4.Exit :  2
+Popped: 45
+
+1.Push 2.Pop 3.Display 4.Exit :  3
+Stack: ['12', '23']
+
+1.Push 2.Pop 3.Display 4.Exit :  4
