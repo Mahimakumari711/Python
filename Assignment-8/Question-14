@@ -1,0 +1,25 @@
+from datetime import datetime
+class Person:
+    def __init__(self, name, date_of_birth):
+        self.name = name
+        self.date_of_birth = date_of_birth  
+    def calculate_age(self):
+        today = datetime.today()
+        dob = datetime.strptime(self.date_of_birth, "%Y-%m-%d")
+        age = today.year - dob.year
+        if (today.month, today.day) < (dob.month, dob.day):
+            age -= 1
+        return age
+        
+name = input("Enter name: ")
+dob = input("Enter date of birth (YYYY-MM-DD): ")
+p = Person(name, dob)
+print("Name:", p.name)
+print("Age:", p.calculate_age())
+
+Output :
+
+Enter name:  Ram Kumar 
+Enter date of birth (YYYY-MM-DD):  2004-11-9
+Name: Ram Kumar 
+Age: 21
