@@ -1,17 +1,12 @@
 def display(file):
     vowels = ('a', 'e', 'i', 'o', 'u')
     with open(file, 'r') as file:
-        f=file.readline()
+        f=file.read()
         for line in f:
             if line.strip() and line[0].lower() in vowels:
-                print(line.strip())
+                print(line.strip(),end=" ")
 
 display("Demo_1")
 
 Output :
-i
-i
-e
-e
-o
-e
+i i e e o e o a e i o o i e u i o
