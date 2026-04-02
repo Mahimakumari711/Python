@@ -1,0 +1,21 @@
+f=open("Demo_1","r")
+data=f.readlines()
+print(data)
+line=len(data)
+word=0
+char=0
+
+for ch in data:
+    words=ch.split()
+    word+=len(words)
+    char+=len(ch)
+
+print("Number of line is : ",line)
+print("Number of word is : ",word)
+print("Number of character is : ",char)
+
+Output :
+['Hii everyone \n', 'Today we will work on file.\n', 'By using python ']
+Number of line is :  3
+Number of word is :  11
+Number of character is :  58
