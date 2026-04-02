@@ -1,0 +1,27 @@
+f=open("Demo_1")
+file=f.read()
+word={}
+count=0
+for ch in file.split() :
+    if ch not in word :
+        count=1
+        word[ch]=count
+    else :
+        count+=1
+        word[ch]=count
+    print(ch," : ",count)
+
+Output :
+Hii  :  1
+Hii  :  2
+everyone  :  1
+Today  :  1
+we  :  1
+will  :  1
+work  :  1
+on  :  1
+file.  :  1
+By  :  1
+using  :  1
+python  :  1
+​
