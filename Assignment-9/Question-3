@@ -1,0 +1,7 @@
+f = open("Demo_1", "r")
+demo=f.read()
+f1=open("Demo_2","w")
+f1.write(demo)
+
+Output :
+58
