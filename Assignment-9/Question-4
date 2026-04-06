@@ -1,27 +1,43 @@
-f=open("Demo_1")
-file=f.read()
-word={}
-count=0
-for ch in file.split() :
-    if ch not in word :
-        count=1
-        word[ch]=count
-    else :
-        count+=1
-        word[ch]=count
-    print(ch," : ",count)
+Method 1 :
+
+f = open("Demo_1.txt")
+file = f.read()
+
+word = {}
+for ch in file.split():
+    word[ch] = word.get(ch, 0) + 1
+    
+for key, value in word.items():
+    print(key, ":", value)
+
+
+
+
+Method 2 :
+
+with open("Demo_1.txt") as f:
+    file = f.read()
+
+word = {}
+for ch in file.split():
+    word[ch] = word.get(ch, 0) + 1
+    
+for key, value in word.items():
+    print(key, ":", value)
+
+
+
 
 Output :
-Hii  :  1
-Hii  :  2
-everyone  :  1
-Today  :  1
-we  :  1
-will  :  1
-work  :  1
-on  :  1
-file.  :  1
-By  :  1
-using  :  1
-python  :  1
-​
+
+Hii : 2
+everyone. : 1
+Today : 1
+we : 1
+will : 1
+work : 1
+on : 1
+file. : 1
+By : 1
+using : 1
+python : 1
