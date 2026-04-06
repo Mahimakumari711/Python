@@ -1,0 +1,17 @@
+try :
+    a=int(input("Enter the first number : "));
+    b=int(input("Enter the second number : "));
+    a=a/b
+except ZeroDivisionError :
+    print("Denominator is zero ")
+else :
+    print ("Division is ",a)
+finally :
+    print("Programm completed ")
+
+Output :
+
+Enter the first number :  12
+Enter the second number :  0
+Denominator is zero 
+Programm completed 
