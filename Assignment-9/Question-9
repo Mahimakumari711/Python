@@ -1,0 +1,28 @@
+f = open("Demo_1.txt", "r")
+lines = f.readlines()
+f.close()
+
+total_lines = len(lines)
+num_files = 3
+lines_per_file = total_lines // num_files
+extra_lines = total_lines % num_files
+
+start = 0
+for i in range(num_files):
+    end = start + lines_per_file
+    if i < extra_lines:
+        end += 1
+    
+    out_f = open(f"part_{i+1}.txt", "w")
+    for j in range(start, end):
+        out_f.write(lines[j])
+    out_f.close()
+    
+    print(f"part_{i+1}.txt created with {end-start} lines")
+    start = end
+
+Output :
+
+part_1.txt created with 2 lines
+part_2.txt created with 1 lines
+part_3.txt created with 1 lines
