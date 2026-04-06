@@ -1,0 +1,25 @@
+f = open("students.txt", "r")
+content = f.read()
+f.close()
+
+upper = 0
+lower = 0
+digits = 0
+
+for char in content:
+    if char.isupper():
+        upper += 1
+    elif char.islower():
+        lower += 1
+    elif char.isdigit():
+        digits += 1
+
+print(f"Uppercase letters: {upper}")
+print(f"Lowercase letters: {lower}")
+print(f"Digits: {digits}")
+
+Output :
+
+Uppercase letters: 4
+Lowercase letters: 15
+Digits: 8
