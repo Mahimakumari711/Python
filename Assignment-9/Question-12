@@ -1,0 +1,19 @@
+f = open("Demo_1.txt", "r")
+content = f.read()
+f.close()
+
+words = content.split()
+print("Words longer than 5 characters:")
+
+for word in words:
+    if len(word) > 5:
+        print(word)
+
+Output :
+
+Words longer than 5 characters:
+everyone.
+python.
+perform
+different
+operation
