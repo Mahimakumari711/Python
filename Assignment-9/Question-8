@@ -1,0 +1,19 @@
+f = open("Demo_1.txt", "r")
+content = f.read()
+f.close()
+
+words = content.split()
+longest_word = ""
+longest_length = 0
+
+for word in words:
+    if len(word) > longest_length:
+        longest_length = len(word)
+        longest_word = word
+
+print(f"Longest word is : '{longest_word}' \nNumber of character are : {longest_length} characters")
+
+Output :
+
+Longest word is : 'everyone.' 
+Number of character are : 9 characters
