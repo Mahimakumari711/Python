@@ -1,0 +1,17 @@
+filename = input("Enter filename: ")
+
+try:
+    f = open(filename, "r")
+    content = f.read()
+    f.close()
+    print("File content:", content)
+except FileNotFoundError:
+    print(f"Error: File '{filename}' not found!")
+
+print("Programm completed ")
+
+Output :
+
+Enter filename:  nonexistent.txt
+Error: File 'nonexistent.txt' not found!
+Programm completed 
