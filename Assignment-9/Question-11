@@ -1,0 +1,41 @@
+n = int(input("Enter the number of values : "))
+f = open("numbers.txt", "w")
+
+for i in range(n):
+    num = input(f"Enter value {i+1}: ")
+    f.write(num + "\n")
+f.close()
+
+print("numbers.txt created")
+
+f = open("numbers.txt", "r")
+even_count = 0
+odd_count = 0
+total_sum = 0
+
+for line in f:
+    num = int(line.strip())
+    total_sum += num
+    if num % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+f.close()
+
+print(f"\nEven numbers: {even_count}")
+print(f"Odd numbers: {odd_count}")
+print(f"Total sum: {total_sum}")
+
+Output :
+
+Enter the number of values :  5
+Enter value 1:  23
+Enter value 2:  34
+Enter value 3:  46
+Enter value 4:  57
+Enter value 5:  68
+numbers.txt created
+
+Even numbers: 3
+Odd numbers: 2
+Total sum: 228
