@@ -1,0 +1,28 @@
+f = open("Demo_1.txt", 'r')
+word=input("Enter the word to search : ");
+nline = []
+for line_num, line in enumerate(f, start=1):
+    if word in line:
+        nline.append(line_num)
+f.close()
+
+if nline :
+    print(f"Word '{word}' found in line number : {nline}")
+    print("\n The line is : ")
+  
+    f = open("Demo_1.txt", 'r')
+    for i, line in enumerate(f, start=1):
+        if i in nline:
+            print(f"Line {i}: {line.strip()}")
+    f.close()
+else:
+    print(f"Word '{word}' not found.")
+
+
+Output :
+
+Enter the word to search :  everyone
+Word 'everyone' found in line number : [1]
+
+ The line is : 
+Line 1: Hii Hii everyone.
