@@ -1,0 +1,22 @@
+f = open("Demo_1.txt", "r")
+lines = f.readlines()
+f.close()
+
+line_count = {}
+for line in lines:
+    line = line.strip()
+    if line in line_count:
+        line_count[line] += 1
+    else:
+        line_count[line] = 1
+
+print("Duplicate lines is : ")
+for line, count in line_count.items():
+    if count > 1:
+        print(f"'{line}' \nIt appears {count} times")
+
+Output :
+
+Duplicate lines is : 
+'Hii Hii everyone.' 
+It appears 3 times
