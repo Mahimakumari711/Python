@@ -1,0 +1,22 @@
+f = open("Demo_1.txt", "r")
+content = f.read()
+f.close()
+
+words = content.split()
+reversed_words = []
+for word in words:
+    reversed_word = word[::-1]  
+    reversed_words.append(reversed_word)
+
+out_f = open("reversed_words.txt", "w")
+out_f.write(" ".join(reversed_words))
+out_f.close()
+
+print("Reversed words stored in reversed_words.txt")
+f1=open("reversed_words.txt","r")
+f1.read()
+
+Output :
+
+Reversed words stored in reversed_words.txt
+'iiH iiH .enoyreve yadoT ew lliw krow no .elif yB gnisu .nohtyp eW lliw mrofrep tnereffid noitarepo no .elif'
