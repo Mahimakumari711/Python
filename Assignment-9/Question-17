@@ -1,0 +1,20 @@
+n = int(input("Enter array size: "))
+arr = input("Enter array elements: ").split()
+
+def safe_get(arr, idx):
+    try:
+        return arr[idx]
+    except IndexError:
+        return "Index out of range"
+    except TypeError:
+        return "Index must be integer"
+
+idx = input("Enter index: ")
+print(safe_get(arr, idx))
+
+Output :
+
+Enter array size:  5
+Enter array elements:  34 56 78 89 90
+Enter index:  9
+Index must be integer
