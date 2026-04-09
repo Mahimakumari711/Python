@@ -1,0 +1,65 @@
+import sqlite3
+
+conn = sqlite3.connect('college.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Student (
+        RollNo INTEGER PRIMARY KEY,
+        Name TEXT NOT NULL,
+        Marks INTEGER
+    )
+''')
+
+cursor.execute("DELETE FROM Student")
+cursor.execute("INSERT INTO Student (RollNo, Name, Marks) VALUES (1, 'Alice', 85)")
+cursor.execute("INSERT INTO Student (RollNo, Name, Marks) VALUES (2, 'Bob', 92)")
+cursor.execute("INSERT INTO Student (RollNo, Name, Marks) VALUES (3, 'Charlie', 78)")
+
+print("Table created and 3 records inserted!")
+
+print("\nAll Student Records:")
+cursor.execute("SELECT * FROM Student")
+records = cursor.fetchall()
+for record in records:
+    print(f"RollNo: {record[0]}, Name: {record[1]}, Marks: {record[2]}")
+
+cursor.execute("UPDATE Student SET Marks = 95 WHERE RollNo = 1")
+print("\nMarks updated for RollNo = 1")
+
+cursor.execute("DELETE FROM Student WHERE RollNo = 3")
+print("\nRecord with RollNo = 3 deleted")
+
+print("\nSingle record (RollNo = 1):")
+cursor.execute("SELECT * FROM Student WHERE RollNo = 1")
+record = cursor.fetchone()
+if record:
+    print(f"RollNo: {record[0]}, Name: {record[1]}, Marks: {record[2]}")
+
+cursor.execute("SELECT COUNT(*) FROM Student")
+count = cursor.fetchone()[0]
+print(f"\nTotal records in Student table: {count}")
+
+conn.close()
+print("\nAll operations completed!")
+
+Output :
+
+Table created and 3 records inserted!
+
+All Student Records:
+RollNo: 1, Name: Alice, Marks: 85
+RollNo: 2, Name: Bob, Marks: 92
+RollNo: 3, Name: Charlie, Marks: 78
+
+Marks updated for RollNo = 1
+
+Record with RollNo = 3 deleted
+
+Single record (RollNo = 1):
+RollNo: 1, Name: Alice, Marks: 95
+
+Total records in Student table: 2
+
+All operations completed!
+​
