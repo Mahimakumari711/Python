@@ -1,0 +1,79 @@
+import sqlite3
+
+conn = sqlite3.connect('library.db')
+cursor = conn.cursor()
+
+cursor.execute(""" 
+    CREATE TABLE IF NOT EXISTS Book (
+        BookID INTEGER PRIMARY KEY,
+        Title TEXT NOT NULL,
+        Price REAL
+    )""")
+
+cursor.execute("DELETE FROM Book")
+
+books = [
+    (1, 'Python Programming', 29.99),
+    (2, 'Data Structures', 39.99),
+    (3, 'Web Development', 24.99),
+    (4, 'Machine Learning', 49.99)
+]
+cursor.executemany("INSERT INTO Book VALUES (?, ?, ?)", books)
+
+print("1. CREATE - Records inserted:")
+cursor.execute("SELECT * FROM Book")
+for book in cursor.fetchall():
+    print(f"   BookID: {book[0]}, Title: {book[1]}, Price: ${book[2]}")
+
+print("\n2. READ - All Books:")
+cursor.execute("SELECT * FROM Book")
+all_books = cursor.fetchall()
+for book in all_books:
+    print(f"   BookID: {book[0]}, Title: {book[1]}, Price: ${book[2]}")
+
+cursor.execute("UPDATE Book SET Price = 44.99 WHERE BookID = 2")
+print("\n3. UPDATE - Price of BookID=2 updated to $44.99")
+
+print("   After update:")
+cursor.execute("SELECT * FROM Book WHERE BookID = 2")
+updated_book = cursor.fetchone()
+print(f"   BookID: {updated_book[0]}, Title: {updated_book[1]}, Price: ${updated_book[2]}")
+
+cursor.execute("DELETE FROM Book WHERE BookID = 4")
+print("\n4. DELETE - BookID=4 deleted")
+
+print("   Remaining Books:")
+cursor.execute("SELECT * FROM Book")
+remaining_books = cursor.fetchall()
+for book in remaining_books:
+    print(f"   BookID: {book[0]}, Title: {book[1]}, Price: ${book[2]}")
+
+conn.close()
+print("\nAll CRUD operations completed!")
+
+Output :
+
+1. CREATE - Records inserted:
+   BookID: 1, Title: Python Programming, Price: $29.99
+   BookID: 2, Title: Data Structures, Price: $39.99
+   BookID: 3, Title: Web Development, Price: $24.99
+   BookID: 4, Title: Machine Learning, Price: $49.99
+
+2. READ - All Books:
+   BookID: 1, Title: Python Programming, Price: $29.99
+   BookID: 2, Title: Data Structures, Price: $39.99
+   BookID: 3, Title: Web Development, Price: $24.99
+   BookID: 4, Title: Machine Learning, Price: $49.99
+
+3. UPDATE - Price of BookID=2 updated to $44.99
+   After update:
+   BookID: 2, Title: Data Structures, Price: $44.99
+
+4. DELETE - BookID=4 deleted
+   Remaining Books:
+   BookID: 1, Title: Python Programming, Price: $29.99
+   BookID: 2, Title: Data Structures, Price: $44.99
+   BookID: 3, Title: Web Development, Price: $24.99
+
+All CRUD operations completed!
+​
