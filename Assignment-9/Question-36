@@ -1,0 +1,43 @@
+import sqlite3
+
+conn = sqlite3.connect('school.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Student (
+        RollNo INTEGER PRIMARY KEY,
+        Name TEXT NOT NULL,
+        Marks INTEGER
+    )
+''')
+
+cursor.execute("DELETE FROM Student")
+students = [
+    (1, 'Alice', 82),
+    (2, 'Bob', 68),
+    (3, 'Charlie', 91),
+    (4, 'Diana', 88),
+    (5, 'Eve', 75),
+    (6, 'Frank', 95)
+]
+cursor.executemany("INSERT INTO Student VALUES (?, ?, ?)", students)
+
+print("Students sorted in DESCENDING order of Marks:")
+
+cursor.execute("SELECT * FROM Student ORDER BY Marks DESC")
+sorted_students = cursor.fetchall()
+
+for student in sorted_students:
+    print(f"RollNo: {student[0]}, Name: {student[1]}, Marks: {student[2]}")
+
+conn.close()
+
+Output :
+
+Students sorted in DESCENDING order of Marks:
+RollNo: 6, Name: Frank, Marks: 95
+RollNo: 3, Name: Charlie, Marks: 91
+RollNo: 4, Name: Diana, Marks: 88
+RollNo: 1, Name: Alice, Marks: 82
+RollNo: 5, Name: Eve, Marks: 75
+RollNo: 2, Name: Bob, Marks: 68
