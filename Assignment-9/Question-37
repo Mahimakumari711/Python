@@ -1,0 +1,45 @@
+import sqlite3
+
+conn = sqlite3.connect('school.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Student (
+        RollNo INTEGER PRIMARY KEY,
+        Name TEXT NOT NULL,
+        Marks INTEGER
+    )
+''')
+
+cursor.execute("DELETE FROM Student")  
+students = [
+    (1, 'Alice Johnson', 85),
+    (2, 'Bob Smith', 92),
+    (3, 'Charlie Brown', 78),
+    (4, 'Diana Wilson', 88),
+    (5, 'Eve Davis', 95)
+]
+cursor.executemany("INSERT INTO Student VALUES (?, ?, ?)", students)
+
+print("All Students in Database:")
+print("-" * 40)
+cursor.execute("SELECT * FROM Student")
+all_students = cursor.fetchall()
+
+for student in all_students:
+    print(f"RollNo: {student[0]:2d} | Name: {student[1]:12s} | Marks: {student[2]:3d}")
+
+conn.close()
+print("\nschool.db created successfully!")
+
+Output :
+
+All Students in Database:
+----------------------------------------
+RollNo:  1 | Name: Alice Johnson | Marks:  85
+RollNo:  2 | Name: Bob Smith    | Marks:  92
+RollNo:  3 | Name: Charlie Brown | Marks:  78
+RollNo:  4 | Name: Diana Wilson | Marks:  88
+RollNo:  5 | Name: Eve Davis    | Marks:  95
+
+school.db created successfully!
