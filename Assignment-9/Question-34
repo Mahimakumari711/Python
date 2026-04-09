@@ -1,0 +1,43 @@
+import sqlite3
+
+conn = sqlite3.connect('school.db')
+cursor = conn.cursor()
+
+cursor.execute(""" 
+    CREATE TABLE IF NOT EXISTS Student (
+        RollNo INTEGER PRIMARY KEY,
+        Name TEXT NOT NULL,
+        Marks INTEGER
+    )""")
+
+cursor.execute("DELETE FROM Student")
+students = [
+    (1, 'Alice', 82),
+    (2, 'Bob', 68),
+    (3, 'Charlie', 91),
+    (4, 'Diana', 73),
+    (5, 'Eve', 88),
+    (6, 'Frank', 79)
+]
+cursor.executemany("INSERT INTO Student VALUES (?, ?, ?)", students)
+
+print("Student table created and records inserted!")
+
+print("\nStudents scoring more than 75 marks:")
+cursor.execute("SELECT * FROM Student WHERE Marks > 75 ORDER BY Marks DESC")
+top_students = cursor.fetchall()
+
+for student in top_students:
+    print(f"RollNo: {student[0]}, Name: {student[1]}, Marks: {student[2]}")
+
+conn.close()
+
+Output :
+
+Student table created and records inserted!
+
+Students scoring more than 75 marks:
+RollNo: 3, Name: Charlie, Marks: 91
+RollNo: 5, Name: Eve, Marks: 88
+RollNo: 1, Name: Alice, Marks: 82
+RollNo: 6, Name: Frank, Marks: 79
