@@ -1,0 +1,74 @@
+arr = input("Enter array elements: ").split()
+
+def integer(arr, idx):
+    try:
+        return arr[idx]
+    except TypeError:
+        return "Index must be integer"
+
+idx = input("Enter index: ")
+print(integer(arr, idx))
+
+Output :
+Enter array elements: 12 34 56 78 90
+Enter index: k
+Index must be integer
+
+
+
+arr = input("Enter the element of array : ").split()
+
+def index(arr, i):
+    try :
+        return arr[i]
+    except IndexError :
+        return "Index out of range."
+i = int(input("Enter the index to access the element : "))
+print(index(arr, i))
+
+Output :
+Enter the element of array : 12 34 56 78 90
+Enter the index to access the element : 9
+Index out of range.
+
+
+
+
+filename = input("Enter filename: ")
+
+try:
+    f = open(filename, "r")
+    content = f.read()
+    f.close()
+    print("File content:", content)
+except FileNotFoundError:
+    print(f"Error: File '{filename}' not found!")
+
+print("Programm completed ")
+
+Output :
+
+Enter filename: Demo
+Error: File 'Demo' not found!
+Programm completed 
+
+
+
+
+
+try : 
+    a = int(input("Enter the first number : "))
+    b = int(input("Enter the second number : "))
+    
+    a = a/b;
+    print("Result of Division is ",a)
+except ZeroDivisionError :
+    print("Division by zero ")
+except ValueError :
+    print("Enter the integer")
+
+Output :
+
+Enter the first number : 12 
+Enter the second number : L
+Enter the integer
