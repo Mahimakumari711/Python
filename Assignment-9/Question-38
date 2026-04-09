@@ -1,0 +1,163 @@
+import sqlite3
+from sqlite3 import Error
+
+class EmployeeManagementSystem:
+    def __init__(self, db_name="company.db"):
+        self.db_name = db_name
+        self.conn = self.connect()
+        self.create_table()
+    
+    def connect(self):
+        """Connect to SQLite database"""
+        try:
+            conn = sqlite3.connect(self.db_name)
+            print(f"Connected to {self.db_name}")
+            return conn
+        except Error as e:
+            print(f"Connection error: {e}")
+            return None
+    
+    def create_table(self):
+        """Create Employee table"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS Employee (
+                    empID INTEGER PRIMARY KEY,
+                    empName TEXT NOT NULL,
+                    Salary REAL
+                )
+            ''')
+            self.conn.commit()
+            print("Employee table ready!")
+        except Error as e:
+            print(f"Table creation error: {e}")
+    
+    def insert_employee(self, emp_id, name, salary):
+        """Insert new employee"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("INSERT OR REPLACE INTO Employee VALUES (?, ?, ?)", 
+                         (emp_id, name, salary))
+            self.conn.commit()
+            print(f"Employee {name} inserted/updated with ID {emp_id}")
+        except Error as e:
+            print(f"Insert error: {e}")
+    
+    def update_salary(self, emp_id, new_salary):
+        """Update employee salary"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("UPDATE Employee SET Salary = ? WHERE empID = ?", 
+                         (new_salary, emp_id))
+            if cursor.rowcount > 0:
+                self.conn.commit()
+                print(f"Salary updated for empID {emp_id} to ${new_salary}")
+            else:
+                print(f"Employee ID {emp_id} not found")
+        except Error as e:
+            print(f"Update error: {e}")
+    
+    def delete_employee(self, emp_id):
+        """Delete employee"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("DELETE FROM Employee WHERE empID = ?", (emp_id,))
+            if cursor.rowcount > 0:
+                self.conn.commit()
+                print(f"Employee ID {emp_id} deleted")
+            else:
+                print(f"Employee ID {emp_id} not found")
+        except Error as e:
+            print(f"Delete error: {e}")
+    
+    def display_high_salary(self):
+        """Display employees with salary > 50000"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT * FROM Employee WHERE Salary > 50000 ORDER BY Salary DESC")
+            employees = cursor.fetchall()
+            
+            print("\nEmployees with Salary > 50,000:")
+            print("-" * 50)
+            print(f"{'ID':<4} {'Name':<15} {'Salary':<10}")
+            print("-" * 50)
+            
+            if employees:
+                for emp in employees:
+                    print(f"{emp[0]:<4} {emp[1]:<15} ${emp[2]:<10,.2f}")
+            else:
+                print("No employees with salary > 50,000")
+        except Error as e:
+            print(f"Display error: {e}")
+    
+    def display_all(self):
+        """Display all employees"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT * FROM Employee")
+            employees = cursor.fetchall()
+            
+            print("\nAll Employees:")
+            print("-" * 50)
+            print(f"{'ID':<4} {'Name':<15} {'Salary':<10}")
+            print("-" * 50)
+            
+            for emp in employees:
+                print(f"{emp[0]:<4} {emp[1]:<15} ${emp[2]:<10,.2f}")
+        except Error as e:
+            print(f"Display error: {e}")
+    
+    def close(self):
+        """Close database connection"""
+        if self.conn:
+            self.conn.close()
+            print("Database connection closed")
+
+def main():
+    ems = EmployeeManagementSystem()
+    
+    ems.insert_employee(101, "John Smith", 60000)
+    ems.insert_employee(102, "Jane Doe", 45000)
+    ems.insert_employee(103, "Mike Wilson", 75000)
+    ems.insert_employee(104, "Sarah Brown", 55000)
+    
+    ems.display_all()
+    ems.update_salary(102, 52000)
+    ems.display_high_salary()
+    ems.delete_employee(104)
+    ems.display_high_salary()
+    ems.close()
+
+if __name__ == "__main__":
+    main()
+
+Output :
+
+Connected to company.db
+Employee table ready!
+Insert error: table Employee has 4 columns but 3 values were supplied
+Insert error: table Employee has 4 columns but 3 values were supplied
+Insert error: table Employee has 4 columns but 3 values were supplied
+Insert error: table Employee has 4 columns but 3 values were supplied
+
+All Employees:
+--------------------------------------------------
+ID   Name            Salary    
+--------------------------------------------------
+Employee ID 102 not found
+
+Employees with Salary > 50,000:
+--------------------------------------------------
+ID   Name            Salary    
+--------------------------------------------------
+No employees with salary > 50,000
+Employee ID 104 not found
+
+Employees with Salary > 50,000:
+--------------------------------------------------
+ID   Name            Salary    
+--------------------------------------------------
+No employees with salary > 50,000
+Database connection closed
+​
