@@ -1,0 +1,46 @@
+import sqlite3
+
+conn = sqlite3.connect("company.db")
+cursor = conn.cursor()
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS Employee (
+        EmpID INTEGER PRIMARY KEY,
+        Name TEXT NOT NULL,
+        Department TEXT,
+        Salary INTEGER
+    )""")
+
+cursor.execute("DELETE FROM Employee")
+employees = [
+    (1, 'John Smith', 'IT', 60000),
+    (2, 'Jane Doe', 'HR', 45000),
+    (3, 'Mike Johnson', 'IT', 75000),
+    (4, 'Sarah Wilson', 'Finance', 55000),
+    (5, 'Tom Brown', 'HR', 42000),
+    (6, 'Lisa Davis', 'IT', 80000)
+]
+
+cursor.executemany("INSERT INTO Employee VALUES (?, ?, ?, ?)", employees)
+
+print("Employee table created and records inserted!")
+
+print("\nAll Employees with Salary > 50000:")
+cursor.execute("SELECT * FROM Employee WHERE Salary > 50000")
+high_salary = cursor.fetchall()
+
+for emp in high_salary:
+    print(f"EmpID: {emp[0]}, Name: {emp[1]}, Dept: {emp[2]}, Salary: {emp[3]}")
+
+conn.close()
+
+Output :
+
+Employee table created and records inserted!
+
+All Employees with Salary > 50000:
+EmpID: 1, Name: John Smith, Dept: IT, Salary: 60000
+EmpID: 3, Name: Mike Johnson, Dept: IT, Salary: 75000
+EmpID: 4, Name: Sarah Wilson, Dept: Finance, Salary: 55000
+EmpID: 6, Name: Lisa Davis, Dept: IT, Salary: 80000
+​
