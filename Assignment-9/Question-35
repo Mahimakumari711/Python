@@ -1,0 +1,95 @@
+import sqlite3
+from sqlite3 import Error
+
+def safe_connect(db_file):
+    """Safely connect to SQLite database with exception handling"""
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        print(f"Successfully connected to {db_file}")
+        return conn
+    except Error as e:
+        print(f"Database connection error: {e}")
+        return None
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        return None
+
+def create_student_table(conn):
+    """Create Student table safely"""
+    try:
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS Student (
+                RollNo INTEGER PRIMARY KEY,
+                Name TEXT NOT NULL,
+                Marks INTEGER
+            )
+        ''')
+        conn.commit()
+        print("Student table created successfully")
+    except Error as e:
+        print(f"Table creation error: {e}")
+        conn.rollback()
+
+def insert_data(conn):
+    """Insert sample data safely"""
+    try:
+        cursor = conn.cursor()
+        students = [
+            (1, 'Alice', 85),
+            (2, 'Bob', 92),
+            (3, 'Charlie', 78)
+        ]
+        cursor.executemany("INSERT OR REPLACE INTO Student VALUES (?, ?, ?)", students)
+        conn.commit()
+        print("Data inserted successfully")
+    except Error as e:
+        print(f"Data insertion error: {e}")
+        conn.rollback()
+
+def display_data(conn):
+    """Display data safely"""
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM Student")
+        records = cursor.fetchall()
+        print("\nStudent Records:")
+        for record in records:
+            print(f"RollNo: {record[0]}, Name: {record[1]}, Marks: {record[2]}")
+    except Error as e:
+        print(f"Data display error: {e}")
+
+def main():
+    conn = safe_connect('school_safe.db')
+    
+    if conn is not None:
+        try:
+            create_student_table(conn)
+            insert_data(conn)
+            display_data(conn)
+            
+        except Exception as e:
+            print(f"Operation error: {e}")
+        finally:
+            try:
+                conn.close()
+                print("\nDatabase connection closed safely")
+            except Error as e:
+                print(f"Error closing connection: {e}")
+
+if __name__ == '__main__':
+    main()
+
+Output :
+
+Successfully connected to school_safe.db
+Student table created successfully
+Data inserted successfully
+
+Student Records:
+RollNo: 1, Name: Alice, Marks: 85
+RollNo: 2, Name: Bob, Marks: 92
+RollNo: 3, Name: Charlie, Marks: 78
+
+Database connection closed safely
