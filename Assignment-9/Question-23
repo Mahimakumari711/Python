@@ -1,0 +1,17 @@
+class InvalidPasswordError(Exception):
+    pass
+
+try:
+    password = input("Enter your password: ")
+    if len(password) < 6:
+        raise InvalidPasswordError("Password must be at least 6 characters long.")
+    print("Password accepted!")
+
+except InvalidPasswordError as e:
+    print("Error:", e)
+
+
+Output :
+
+Enter your password:  mn@12
+Error: Password must be at least 6 characters long.
