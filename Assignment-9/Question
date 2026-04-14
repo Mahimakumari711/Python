@@ -72,3 +72,28 @@ Output :
 Enter the first number : 12 
 Enter the second number : L
 Enter the integer
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+Write a program that calculates the reciprocal of a number provided by the user. Use try, except for potential errors (ValueError, ZeroDivisionError), an else block to print the result of successful, and a finally block that always prints a cleanup message.
+
+-------------------------------------------------------------------------------------------------------------------------------
+try:
+    num = float(input("Enter a number: "))
+except ValueError:
+    print("Error: Please enter a valid number")
+else:
+    try:
+        reciprocal = 1 / num
+        print("Reciprocal:", reciprocal)
+    except ZeroDivisionError:
+        print("Error: Cannot calculate reciprocal of zero")
+finally:
+    print("Calculation complete - cleanup done!")
+
+Output :
+
+Enter a number:  0
+Error: Cannot calculate reciprocal of zero
+Calculation complete - cleanup done!
+
