@@ -1,0 +1,78 @@
+class Employee:
+    def __init__(self, name, number, basicSal, DA, HRA):
+        self.empName = name
+        self.empNumber = number
+        self.basicSal = basicSal
+        self.DA = DA
+        self.HRA = HRA
+
+    def calGrossSal(self):
+        return self.basicSal + self.DA + self.HRA
+
+    def showEmpDetails(self):
+        print("\n--- Employee Details ---")
+        print("Name:", self.empName)
+        print("Employee Number:", self.empNumber)
+        print("Basic Salary:", self.basicSal)
+        print("DA:", self.DA)
+        print("HRA:", self.HRA)
+        print("Gross Salary:", self.calGrossSal())
+
+employees = []
+n = int(input("Enter number of employees: "))
+
+for i in range(n):
+    print(f"\nEnter details for Employee {i+1}")
+    name = input("Enter Name: ")
+    number = input("Enter Employee Number: ")
+    basic = float(input("Enter Basic Salary: "))
+    da = float(input("Enter DA: "))
+    hra = float(input("Enter HRA: "))
+    
+    emp = Employee(name, number, basic, da, hra)
+    employees.append(emp)
+
+print("\nEmployees with Gross Salary > 50000:")
+found = False
+for emp in employees:
+    if emp.calGrossSal() > 50000:
+        emp.showEmpDetails()
+        found = True
+if not found:
+    print("No employee has gross salary more than 50000.")
+
+
+Output :
+
+Enter number of employees:  3
+
+Enter details for Employee 1
+Enter Name:  Mahima Kumari 
+Enter Employee Number:  101
+Enter Basic Salary:  65000
+Enter DA:  3000
+Enter HRA:  3500
+
+Enter details for Employee 2
+Enter Name:  Akarsh Raj 
+Enter Employee Number:  102
+Enter Basic Salary:  45000
+Enter DA:  1000
+Enter HRA:  2000
+
+Enter details for Employee 3
+Enter Name:  Priya Singh 
+Enter Employee Number:  103
+Enter Basic Salary:  25000
+Enter DA:  1500
+Enter HRA:  1000
+
+Employees with Gross Salary > 50000:
+
+--- Employee Details ---
+Name: Mahima Kumari 
+Employee Number: 101
+Basic Salary: 65000.0
+DA: 3000.0
+HRA: 3500.0
+Gross Salary: 71500.0
