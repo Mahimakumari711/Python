@@ -1,0 +1,13 @@
+try:
+    num = float(input("Enter a number: "))
+    if num < 0:
+        raise Exception("NegativeNumberError: Number should not be negative.")
+    print("Valid number entered:", num)
+except Exception as e:
+    print("Error:", e)
+
+
+Output :
+
+Enter a number:  -34
+Error: NegativeNumberError: Number should not be negative.
