@@ -1,0 +1,17 @@
+class WeakPasswordError(Exception):
+    pass
+
+try:
+    password = input("Enter your password: ")
+    if len(password) < 8:
+        raise WeakPasswordError("Password is too short! It must be at least 8 characters long.")
+    print("Password is strong enough!")
+
+except WeakPasswordError as e:
+    print("Error:", e)
+
+
+Output :
+
+Enter your password:  xyz12
+Error: Password is too short! It must be at least 8 characters long.
