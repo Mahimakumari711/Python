@@ -75,6 +75,7 @@ Enter the integer
 
 
 -------------------------------------------------------------------------------------------------------------------------------
+
 Write a program that calculates the reciprocal of a number provided by the user. Use try, except for potential errors (ValueError, ZeroDivisionError), an else block to print the result of successful, and a finally block that always prints a cleanup message.
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -97,3 +98,30 @@ Enter a number:  0
 Error: Cannot calculate reciprocal of zero
 Calculation complete - cleanup done!
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create the user exception class called InsufficientFundsError. Write a function withdraw(balance, amount) that raises this exception if the withdrawal amount exceeds the balance.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class InsufficientFundsError(Exception):
+    pass
+
+def withdraw(balance, amount):
+    if amount > balance:
+        raise InsufficientFundsError(f"Insufficient funds: ${balance} < ${amount}")
+    return balance - amount
+try:
+    balance = float(input("Enter current balance: "))
+    amount = float(input("Enter withdrawal amount: "))
+    new_balance = withdraw(balance, amount)
+    print(f"Withdrawal successful! New balance: ${new_balance}")
+except InsufficientFundsError as e:
+    print(e)
+except ValueError:
+    print("Please enter valid numbers")
+
+Output :
+
+Enter current balance:  25000
+Enter withdrawal amount:  45000
+Insufficient funds: $25000.0 < $45000.0
