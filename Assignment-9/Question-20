@@ -1,65 +1,22 @@
-import sqlite3
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    result = num1 / num2   
+except ValueError:
+    print("Error: Please enter valid integers!")
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
 
-conn = sqlite3.connect('my_database.db')
-cursor = conn.cursor()
+else:
+    print("Result is:", result)
 
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS Students (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    age INTEGER,
-    email TEXT NOT NULL
-)
-''')
-
-name = input("Enter student name: ")
-age = int(input("Enter student age: "))
-email = input("Enter student email: ")
-cursor.execute("INSERT INTO Students (name, age, email) VALUES (?, ?, ?)", (name, age, email))
-conn.commit()
-
-students_list = [
-    ('Ramesh', 20, 'ramesh@email.com'),
-    ('Suresh', 22, 'suresh@email.com'),
-    ('Priya', 19, 'priya@email.com')
-]
-cursor.executemany("INSERT INTO Students (name, age, email) VALUES (?, ?, ?)", students_list)
-conn.commit()
-
-print("\nAll Students:")
-cursor.execute("SELECT * FROM Students")
-for row in cursor.fetchall():
-    print(row)
-
-cursor.execute("UPDATE Students SET email = 'newemail@email.com' WHERE id = 1")
-conn.commit()
-print("\nUpdated email for id=1")
-
-delete_id = int(input("\nEnter id to delete: "))
-cursor.execute("DELETE FROM Students WHERE id = ?", (delete_id,))
-conn.commit()
-
-cursor.execute("SELECT COUNT(*) FROM Students")
-count = cursor.fetchone()[0]
-print(f"\nTotal students: {count}")
-
-conn.close()
+finally:
+    print("Execution completed.")
 
 
 Output :
 
-Enter student name: Mahima
-Enter student age: 21
-Enter student email: mahima@email.com
-
-All Students:
-(1, 'Mahima', 21, 'newemail@email.com')
-(2, 'Ramesh', 20, 'ramesh@email.com')
-(3, 'Suresh', 22, 'suresh@email.com')
-(4, 'Priya', 19, 'priya@email.com')
-
-Updated email for id=1
-
-Enter id to delete: 2
-
-Total students: 3
+Enter first number:  20
+Enter second number:  0
+Error: Cannot divide by zero!
+Execution completed.
