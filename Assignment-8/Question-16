@@ -1,0 +1,35 @@
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+def are_non_collinear(p1, p2, p3):
+    area = p1.x * (p2.y - p3.y) + \
+           p2.x * (p3.y - p1.y) + \
+           p3.x * (p1.y - p2.y)
+    
+    return area != 0  
+    
+print("Enter coordinates of three points:")
+
+x1, y1 = map(float, input("Enter x1 y1: ").split())
+x2, y2 = map(float, input("Enter x2 y2: ").split())
+x3, y3 = map(float, input("Enter x3 y3: ").split())
+
+p1 = Point(x1, y1)
+p2 = Point(x2, y2)
+p3 = Point(x3, y3)
+
+if are_non_collinear(p1, p2, p3):
+    print("The points are non-collinear")
+else:
+    print("The points are collinear")
+
+
+Output :
+
+Enter coordinates of three points:
+Enter x1 y1:  2 3
+Enter x2 y2:  4 5 
+Enter x3 y3:  5 6
+The points are collinear
