@@ -1,0 +1,49 @@
+try:
+    product_name = input("Enter product name: ")
+    stock = int(input("Enter available stock: "))
+
+    while True:
+        print("\n1. Purchase Product")
+        print("2. Check Stock")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+        if choice == '1':
+            try:
+                qty = int(input("Enter quantity to purchase: "))
+                if qty > stock:
+                    raise Exception("OutOfStockError: Not enough stock available!")
+                stock -= qty
+                print(f"Purchased {qty} items of {product_name}")
+            except Exception as e:
+                print("Error:", e)
+            except ValueError:
+                print("Invalid input! Enter a number.")
+        elif choice == '2':
+            print(f"Product: {product_name}, Available Stock: {stock}")
+        elif choice == '3':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice!")
+except ValueError:
+    print("Error: Please enter valid numeric value for stock.")
+
+
+Output :
+
+Enter product name:  Milk Bread Jam
+Enter available stock:  3
+
+1. Purchase Product
+2. Check Stock
+3. Exit
+Enter your choice:  1
+Enter quantity to purchase:  7
+Error: OutOfStockError: Not enough stock available!
+
+1. Purchase Product
+2. Check Stock
+3. Exit
+Enter your choice:  3
+Exiting...
