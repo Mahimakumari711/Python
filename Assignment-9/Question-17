@@ -1,16 +1,18 @@
-arr = input("Enter the element of array : ").split()
+filename = input("Enter filename: ")
 
-def index(arr, i):
-    try :
-        return arr[i]
-    except IndexError :
-        return "Index out of range."
-i = int(input("Enter the index to access the element : "))
-print(index(arr, i))
+try:
+    f = open(filename, "r")
+    content = f.read()
+    f.close()
+    print("File content:", content)
+except FileNotFoundError:
+    print(f"Error: File '{filename}' not found!")
+
+print("Programm completed ")
 
 
 Output :
 
-Enter the element of array :  12 34 56 78
-Enter the index to access the element :  9
-Index out of range.
+Enter filename:  Demo
+Error: File 'Demo' not found!
+Programm completed 
