@@ -1,20 +1,16 @@
-n = int(input("Enter array size: "))
-arr = input("Enter array elements: ").split()
+arr = input("Enter the element of array : ").split()
 
-def safe_get(arr, idx):
-    try:
-        return arr[idx]
-    except IndexError:
-        return "Index out of range"
-    except TypeError:
-        return "Index must be integer"
+def index(arr, i):
+    try :
+        return arr[i]
+    except IndexError :
+        return "Index out of range."
+i = int(input("Enter the index to access the element : "))
+print(index(arr, i))
 
-idx = input("Enter index: ")
-print(safe_get(arr, idx))
 
 Output :
 
-Enter array size:  5
-Enter array elements:  34 56 78 89 90
-Enter index:  9
-Index must be integer
+Enter the element of array :  12 34 56 78
+Enter the index to access the element :  9
+Index out of range.
