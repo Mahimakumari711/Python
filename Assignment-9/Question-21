@@ -1,0 +1,18 @@
+class InvalidMarksError(Exception):
+    pass
+try:
+    marks = float(input("Enter student marks: "))
+    if marks < 0 or marks > 100:
+        raise InvalidMarksError("Marks should be between 0 and 100.")
+    print("Valid marks entered:", marks)
+
+except InvalidMarksError as e:
+    print("Error:", e)
+except ValueError:
+    print("Error: Please enter a numeric value.")
+
+
+Output :
+
+Enter student marks:  125
+Error: Marks should be between 0 and 100.
