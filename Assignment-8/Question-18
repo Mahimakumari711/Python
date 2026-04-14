@@ -1,0 +1,59 @@
+class ComplexNumber:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def add(self, other):
+        return ComplexNumber(self.real + other.real,
+                             self.imag + other.imag)
+
+    def subtract(self, other):
+        return ComplexNumber(self.real - other.real,
+                             self.imag - other.imag)
+
+    def multiply(self, other):
+        real_part = self.real * other.real - self.imag * other.imag
+        imag_part = self.real * other.imag + self.imag * other.real
+        return ComplexNumber(real_part, imag_part)
+        
+    def display(self):
+        print(f"{self.real} + {self.imag}i")
+
+print("Enter first complex number:")
+r1 = float(input("Real part: "))
+i1 = float(input("Imaginary part: "))
+
+print("\nEnter second complex number:")
+r2 = float(input("Real part: "))
+i2 = float(input("Imaginary part: "))
+
+c1 = ComplexNumber(r1, i1)
+c2 = ComplexNumber(r2, i2)
+sum_result = c1.add(c2)
+diff_result = c1.subtract(c2)
+prod_result = c1.multiply(c2)
+
+print("\nAddition:")
+sum_result.display()
+print("Subtraction:")
+diff_result.display()
+print("Multiplication:")
+prod_result.display()
+
+
+Output :
+
+Enter first complex number:
+Real part:  12
+Imaginary part:  13
+
+Enter second complex number:
+Real part:  11
+Imaginary part:  10
+
+Addition:
+23.0 + 23.0i
+Subtraction:
+1.0 + 3.0i
+Multiplication:
+2.0 + 263.0i
