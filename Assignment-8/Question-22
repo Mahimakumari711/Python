@@ -1,0 +1,176 @@
+class Student:
+    def __init__(self, name, roll, marks, branch, college):
+        self.studName = name
+        self.studRoll = roll
+        self.studMarks = marks  
+        self.studBranch = branch
+        self.studCollegeName = college
+
+    def averageMarks(self):
+        return sum(self.studMarks) / len(self.studMarks)
+
+    def dispStudentDetails(self):
+        print("\n--- Student Details ---")
+        print("Name:", self.studName)
+        print("Roll No:", self.studRoll)
+        print("Branch:", self.studBranch)
+        print("College:", self.studCollegeName)
+        print("Marks:", self.studMarks)
+        print("Average Marks:", self.averageMarks())
+
+students = []
+for i in range(10):
+    print(f"\nEnter details for Student {i+1}")
+    
+    name = input("Enter Name: ")
+    roll = input("Enter Roll No: ")
+    branch = input("Enter Branch: ")
+    college = input("Enter College Name: ")
+    marks = []
+    print("Enter marks for 5 subjects:")
+    for j in range(5):
+        m = float(input(f"Subject {j+1}: "))
+        marks.append(m)
+    s = Student(name, roll, marks, branch, college)
+    students.append(s)
+
+top_student = students[0]
+for s in students:
+    if s.averageMarks() > top_student.averageMarks():
+        top_student = s
+
+print("\nStudent with Highest Average Marks:")
+top_student.dispStudentDetails()
+
+
+Output :
+
+Enter details for Student 1
+Enter Name:  Mahima Kumari
+Enter Roll No:  10
+Enter Branch:  ECE
+Enter College Name:  XYZ
+Enter marks for 5 subjects:
+Subject 1:  89
+Subject 2:  90
+Subject 3:  98
+Subject 4:  97
+Subject 5:  78
+
+Enter details for Student 2
+Enter Name:  Soni Kumari
+Enter Roll No:  11
+Enter Branch:  CSE
+Enter College Name:  ABC
+Enter marks for 5 subjects:
+Subject 1:  78
+Subject 2:  89
+Subject 3:  90
+Subject 4:  97
+Subject 5:  88
+
+Enter details for Student 3
+Enter Name:  Rohan Kumar
+Enter Roll No:  12
+Enter Branch:  ECE
+Enter College Name:  MNP
+Enter marks for 5 subjects:
+Subject 1:  67
+Subject 2:  89
+Subject 3:  78
+Subject 4:  77
+Subject 5:  87
+
+Enter details for Student 4
+Enter Name:  Ram Singh 
+Enter Roll No:  13
+Enter Branch:  CSE
+Enter College Name:  XYZ
+Enter marks for 5 subjects:
+Subject 1:  67
+Subject 2:  68
+Subject 3:  60
+Subject 4:  89
+Subject 5:  78
+
+Enter details for Student 5
+Enter Name:  Sita Singh 
+Enter Roll No:  14
+Enter Branch:  CSE
+Enter College Name:  ABC
+Enter marks for 5 subjects:
+Subject 1:  67 
+Subject 2:  89
+Subject 3:  45
+Subject 4:  67
+Subject 5:  89
+
+Enter details for Student 6
+Enter Name:  Akarsh Raj 
+Enter Roll No:  15
+Enter Branch:  ECE
+Enter College Name:  ABC
+Enter marks for 5 subjects:
+Subject 1:  90
+Subject 2:  98
+Subject 3:  87
+Subject 4:  76
+Subject 5:  79
+
+Enter details for Student 7
+Enter Name:  Mrinal Raj 
+Enter Roll No:  16
+Enter Branch:  CSE
+Enter College Name:  MNP
+Enter marks for 5 subjects:
+Subject 1:  99
+Subject 2:  89
+Subject 3:  98
+Subject 4:  87
+Subject 5:  89
+
+Enter details for Student 8
+Enter Name:  Ayush Raj 
+Enter Roll No:  17
+Enter Branch:  ECE
+Enter College Name:  MNP 
+Enter marks for 5 subjects:
+Subject 1:  67
+Subject 2:  89 
+Subject 3:  90
+Subject 4:  99
+Subject 5:  98
+
+Enter details for Student 9
+Enter Name:  Riya Raj
+Enter Roll No:  18
+Enter Branch:  CSE
+Enter College Name:  XYZ
+Enter marks for 5 subjects:
+Subject 1:  89
+Subject 2:  98
+Subject 3:  97
+Subject 4:  86
+Subject 5:  88
+
+Enter details for Student 10
+Enter Name:  Priya Singh
+Enter Roll No:  19
+Enter Branch:  CSE
+Enter College Name:  ABC
+Enter marks for 5 subjects:
+Subject 1:  76
+Subject 2:  87
+Subject 3:  97
+Subject 4:  68
+Subject 5:  98
+
+Student with Highest Average Marks:
+
+--- Student Details ---
+Name: Mrinal Raj 
+Roll No: 16
+Branch: CSE
+College: MNP
+Marks: [99.0, 89.0, 98.0, 87.0, 89.0]
+Average Marks: 92.4
