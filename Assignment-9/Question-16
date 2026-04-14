@@ -1,17 +1,11 @@
-filename = input("Enter filename: ")
-
 try:
-    f = open(filename, "r")
-    content = f.read()
-    f.close()
-    print("File content:", content)
-except FileNotFoundError:
-    print(f"Error: File '{filename}' not found!")
+    num = int(input("Enter an integer: "))
+    print("You entered:", num)
 
-print("Programm completed ")
+except ValueError:
+    print("Error: That was not a valid integer!")
 
 Output :
 
-Enter filename:  nonexistent.txt
-Error: File 'nonexistent.txt' not found!
-Programm completed 
+Enter an integer:  hii
+Error: That was not a valid integer!
