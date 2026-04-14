@@ -1,0 +1,20 @@
+class LowSalaryError(Exception):
+    pass
+try:
+    salary = float(input("Enter employee salary: "))
+    if salary < 15000:
+        raise LowSalaryError("Salary is too low! Minimum salary should be Rs.15000.")
+
+    print("Salary is valid.")
+
+except LowSalaryError as e:
+    print("Error:", e)
+
+except ValueError:
+    print("Error: Please enter a valid numeric salary.")
+
+
+Output :
+
+Enter employee salary:  5000
+Error: Salary is too low! Minimum salary should be Rs.15000.
