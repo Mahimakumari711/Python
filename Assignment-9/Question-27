@@ -1,0 +1,20 @@
+try:
+    balance = float(input("Enter your account balance: "))
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > balance:
+        raise Exception("ATMError: Insufficient balance!")
+    if amount > 20000:
+        raise Exception("ATMError: Withdrawal limit exceeded! Max Rs.20000 per day.")
+    print("Withdrawal successful!")
+    print("Remaining balance:", balance - amount)
+except ValueError:
+    print("Error: Please enter valid numeric values.")
+except Exception as e:
+    print("Error:", e)
+
+
+Output :
+
+Enter your account balance:  45000
+Enter withdrawal amount:  25000
+Error: ATMError: Withdrawal limit exceeded! Max Rs.20000 per day.
