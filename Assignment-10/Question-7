@@ -1,0 +1,22 @@
+import numpy as np 
+
+arr = np.random.randint(0,100,(10,10))
+print(arr)
+print("Maximun value is : ",np.max(arr))
+print("Minimum value is : ",np.min(arr))
+
+
+Output :
+
+[[ 7 12 68 34 54 24 32 27 70 53]
+ [55 39 66 98 42 25 52 80 34 22]
+ [76 61 49  4 25 60 73 69 49 67]
+ [61 95 10 43  0 77 59 20 11 15]
+ [61 90 35 55 75 24  2 13 74 50]
+ [43 42 54 33 24 71 10  5 34 20]
+ [69 85 27 14 88 38 54 56 59 20]
+ [33 17 86 30 36 46 29 82 75 86]
+ [52 66 35 34 15 42 95 92 26 32]
+ [88 38 26 61 99 19 56 38  9 85]]
+Maximun value is :  99
+Minimum value is :  0
