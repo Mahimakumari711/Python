@@ -1,0 +1,13 @@
+import numpy as np
+a = input("Enter the value of vector : ")
+ele = [int(x) for x in a.split()]
+arr = np.array(ele)
+print(arr)
+print("Reversed array is : ",arr[::-1])
+
+
+Output :
+
+Enter the value of vector : 23 45 67 89
+[23 45 67 89]
+Reversed array is :  [89 67 45 23]
