@@ -1,0 +1,11 @@
+import numpy as np
+arr = np.zeros(10, dtype=int)
+print(arr)
+arr[4]=1
+print(arr)
+
+
+Output :
+
+[0 0 0 0 0 0 0 0 0 0]
+[0 0 0 0 1 0 0 0 0 0]
