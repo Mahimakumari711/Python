@@ -1,0 +1,25 @@
+import numpy as np
+
+A = np.array([[4, 7],[2, 6]])
+A_inv = np.linalg.inv(A)
+print("Matrix A:")
+print(A)
+print("\nInverse of A:")
+print(A_inv)
+print("\nVerification (A @ A_inv):")
+print(A @ A_inv)
+
+
+Output :
+
+Matrix A:
+[[4 7]
+ [2 6]]
+
+Inverse of A:
+[[ 0.6 -0.7]
+ [-0.2  0.4]]
+
+Verification (A @ A_inv):
+[[1. 0.]
+ [0. 1.]]
