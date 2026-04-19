@@ -1,28 +1,30 @@
-import numpy as np
+import numpy as np 
 
-arr1 = np.random.randint(0, 10, (5, 3))
-arr2 = np.random.randint(0, 10, (3, 2))
-
+arr1 = np.random.randint(0,10,(5,3))
+arr2 = np.random.randint(0,10,(3,2))
 print("Matrix 1 (5x3):")
 print(arr1)
 print("\nMatrix 2 (3x2):")
 print(arr2)
-
-# Real matrix product (5x3) @ (3x2) → (5x2)
-product = np.dot(arr1, arr2)
-# or equivalently: product = arr1 @ arr2
-
-print("\nProduct of two matrices (5x3 * 3x2 → 5x2):")
-print(product)
-
-
-
-
-
-
-import numpy as np 
-
-arr1 = np.random.randint(0,10,(5,3))
-arr2 = np.ramdom.randint(0,10,(3,2))
 print("Product of two matrix is : ")
-print(arr1*arr2)
+print(arr1@arr2)
+
+Output :
+
+Matrix 1 (5x3):
+[[8 8 2]
+ [3 2 0]
+ [8 8 3]
+ [8 2 8]
+ [4 3 0]]
+
+Matrix 2 (3x2):
+[[4 3]
+ [6 9]
+ [8 0]]
+Product of two matrix is : 
+[[ 96  96]
+ [ 24  27]
+ [104  96]
+ [108  42]
+ [ 34  39]]
