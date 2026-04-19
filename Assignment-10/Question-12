@@ -1,0 +1,9 @@
+import numpy as np
+
+arr = np.array([1, 4, 6, 2, 9, 7, 3, 8])
+mask = (arr >= 3) & (arr <= 8)
+arr[mask] *= -1
+print(arr)
+
+Output :
+[ 1 -4 -6  2  9 -7 -3 -8]
