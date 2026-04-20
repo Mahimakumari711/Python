@@ -1,0 +1,17 @@
+import numpy as np
+
+arr = list(map(int, input("Enter first array elements: ").split()))
+unique, counts = np.unique(arr, return_counts=True)
+print("Elements and their counts:")
+for u, c in zip(unique, counts):
+    print(f"{u} occurs {c} times")
+
+
+Output :
+
+Enter first array elements:  1 2 2 2 3 3 4 4 4 4
+Elements and their counts:
+1 occurs 1 times
+2 occurs 3 times
+3 occurs 2 times
+4 occurs 4 times
