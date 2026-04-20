@@ -1,0 +1,24 @@
+import numpy as np
+
+A = np.array([[2, 1],[1, 2]])
+print("Matrix A:")
+print(A)
+eigenvalues, eigenvectors = np.linalg.eig(A)
+print("\nEigenvalues:")
+print(eigenvalues)
+print("\nEigenvectors (columns):")
+print(eigenvectors)
+
+
+Output :
+
+Matrix A:
+[[2 1]
+ [1 2]]
+
+Eigenvalues:
+[3. 1.]
+
+Eigenvectors (columns):
+[[ 0.70710678 -0.70710678]
+ [ 0.70710678  0.70710678]]
