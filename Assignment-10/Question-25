@@ -1,0 +1,20 @@
+import numpy as np
+
+arr = np.random.randint(0, 10, size=(3, 2))
+print("Random 3x2 Matrix:")
+print(arr)
+max_val = arr.max()
+min_val = arr.min()
+print("\nMaximum value:", max_val)
+print("Minimum value:", min_val)
+
+
+Output :
+
+Random 3x2 Matrix:
+[[9 6]
+ [5 4]
+ [1 3]]
+
+Maximum value: 9
+Minimum value: 1
