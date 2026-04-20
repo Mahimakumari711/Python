@@ -1,0 +1,27 @@
+import numpy as np
+
+a = input("Enter 16 elements separated by space: ")
+lst = list(map(int, a.split()))
+if len(lst) != 16:
+    print("Please enter exactly 16 elements.")
+else:
+    arr = np.array(lst).reshape(4, 4)
+    print("\nOriginal 4x4 Array:")
+    print(arr)
+    print("\nFirst row:",arr[0])
+    print("\nLast column:",arr[:, -1])
+
+
+Output :
+
+Enter 16 elements separated by space:  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
+Original 4x4 Array:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]]
+
+First row: [1 2 3 4]
+
+Last column: [ 4  8 12 16]
