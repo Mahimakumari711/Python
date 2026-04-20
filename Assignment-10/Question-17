@@ -1,0 +1,11 @@
+import numpy as np
+
+arr = np.linspace(5, 50, 10)
+print("Array:")
+print(arr)
+
+
+Output :
+
+Array:
+[ 5. 10. 15. 20. 25. 30. 35. 40. 45. 50.]
