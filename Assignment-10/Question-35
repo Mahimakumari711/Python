@@ -1,0 +1,15 @@
+import numpy as np
+
+user_input = input("Enter array elements: ")
+arr = np.array(list(map(float, user_input.split())))
+print("Mean:", np.mean(arr))
+print("Median:", np.median(arr))
+print("Standard Deviation:", np.std(arr))
+
+
+Output :
+
+Enter array elements:  10 20 30 40 50
+Mean: 30.0
+Median: 30.0
+Standard Deviation: 14.142135623730951
