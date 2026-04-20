@@ -1,0 +1,19 @@
+import numpy as np
+
+n=int(input("Enter the number of element : "))
+zero = np.zeros(n)
+one = np.ones(n)
+print("Array filled with zeros:")
+print(zero)
+print("\nArray filled with ones:")
+print(one)
+
+
+Output :
+
+Enter the number of element :  5
+Array filled with zeros:
+[0. 0. 0. 0. 0.]
+
+Array filled with ones:
+[1. 1. 1. 1. 1.]
