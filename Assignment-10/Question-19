@@ -1,0 +1,13 @@
+import numpy as np
+
+identity_matrix = np.eye(3, dtype=int)
+print("3x3 Identity matrix is :")
+print(identity_matrix)
+
+
+Output :
+
+3x3 Identity matrix is :
+[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
