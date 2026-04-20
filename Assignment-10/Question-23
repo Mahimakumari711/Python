@@ -1,0 +1,15 @@
+import numpy as np
+
+a = list(map(int, input("Enter first array elements: ").split()))
+b = list(map(int, input("Enter second array elements: ").split()))
+arr1 = np.array(a)
+arr2 = np.array(b)
+common = np.intersect1d(arr1, arr2)
+print("Common elements are :",common)
+
+
+Output :
+
+Enter first array elements:  1 2 3 4 5 6 7
+Enter second array elements:  4 5 6 7 8 9 10
+Common elements are : [4 5 6 7]
