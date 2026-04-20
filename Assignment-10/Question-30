@@ -1,0 +1,21 @@
+import numpy as np
+
+arr = np.array([[3, 5, 1],[1, 2, 9],[4, 3, 7]])
+print("Original Array:")
+print(arr)
+sorted_arr = arr[arr[:, 1].argsort()]
+print("\nArray sorted by second column:")
+print(sorted_arr)
+
+
+Output :
+
+Original Array:
+[[3 5 1]
+ [1 2 9]
+ [4 3 7]]
+
+Array sorted by second column:
+[[1 2 9]
+ [4 3 7]
+ [3 5 1]]
