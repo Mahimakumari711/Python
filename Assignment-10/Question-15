@@ -1,0 +1,19 @@
+import numpy as np
+
+a = input("Enter elements of the array separated by space: ")
+arr = np.array(list(map(int, a.split())))
+if arr.size % 2 != 0:
+    print("Cannot reshape into 2 rows (number of elements must be even).")
+else:
+    result = arr.reshape(2, -1)
+    print("\nReshaped array (2 rows):")
+    print(result)
+
+
+Output :
+
+Enter elements of the array separated by space:  12 33 45 67 
+
+Reshaped array (2 rows):
+[[12 33]
+ [45 67]]
