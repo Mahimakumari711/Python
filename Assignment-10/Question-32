@@ -1,0 +1,20 @@
+import numpy as np
+
+A = np.array([[1, 2, 3],[4, 5, 6]])
+print("Original Matrix:")
+print(A)
+A_T = A.T
+print("\nTransposed Matrix:")
+print(A_T)
+
+
+Output :
+
+Original Matrix:
+[[1 2 3]
+ [4 5 6]]
+
+Transposed Matrix:
+[[1 4]
+ [2 5]
+ [3 6]]
