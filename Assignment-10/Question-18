@@ -1,0 +1,13 @@
+import numpy as np
+
+l = input("Enter the value of list : ")
+lst = list(map(int, l.split()))
+arr = np.array(lst)
+print("NumPy array:")
+print(arr)
+
+
+Output :
+Enter the value of list :  23 45  67 89
+NumPy array:
+[23 45 67 89]
