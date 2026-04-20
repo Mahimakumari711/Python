@@ -1,0 +1,25 @@
+import numpy as np
+
+a = input("Enter 16 elements separated by space: ")
+lst = list(map(int, a.split()))
+arr = np.array(lst).reshape(4, 4)
+print("\nOriginal 4x4 Array:")
+print(arr)
+result = arr[1::2, ::2]
+print("\nOdd rows and even columns:")
+print(result)
+
+
+Output :
+
+Enter 16 elements separated by space:  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
+Original 4x4 Array:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]]
+
+Odd rows and even columns:
+[[ 5  7]
+ [13 15]]
