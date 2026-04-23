@@ -1,0 +1,9 @@
+res=df.iloc[[2,3,7]]
+print(res[['birds','age','visits']])
+
+Output :
+
+       birds  age  visits
+c     plovers  1.5       3
+d  spoonbills  NaN       4
+h      Cranes  NaN       2
