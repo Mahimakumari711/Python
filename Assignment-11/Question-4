@@ -1,0 +1,14 @@
+print(df[['birds','age']])
+
+Output :
+       birds  age
+a      Cranes  3.5
+b      Cranes  4.0
+c     plovers  1.5
+d  spoonbills  NaN
+e  spoonbills  6.0
+f      Cranes  3.0
+g     plovers  5.5
+h      Cranes  NaN
+i  spoonbills  8.0
+j  spoonbills  4.0
