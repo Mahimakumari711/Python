@@ -1,0 +1,21 @@
+import pandas as pd 
+import numpy as np
+
+data = {'birds':['Cranes', 'Cranes', 'plovers', 'spoonbills', 'spoonbills', 'Cranes','plovers', 'Cranes', 'spoonbills', 'spoonbills'], 'age':[3.5, 4, 1.5, np.nan, 6, 3, 5.5, np.nan, 8, 4], 'visits': [2, 4, 3, 4, 3, 4, 2, 2, 3, 2], 'priority': ['yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'no', 'no']}
+labels = ['a','b','c','d','e','f','g','h','i','j']
+df=pd.DataFrame(data,index=labels)
+print(df)
+
+Output :
+
+        birds  age  visits priority
+a      Cranes  3.5       2      yes
+b      Cranes  4.0       4      yes
+c     plovers  1.5       3       no
+d  spoonbills  NaN       4      yes
+e  spoonbills  6.0       3       no
+f      Cranes  3.0       4       no
+g     plovers  5.5       2       no
+h      Cranes  NaN       2      yes
+i  spoonbills  8.0       3       no
+j  spoonbills  4.0       2       no
