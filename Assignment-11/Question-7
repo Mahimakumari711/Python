@@ -1,0 +1,3 @@
+res=df[['age']]
+res1=df.dropna(subset =['age'])
+print(res1)
