@@ -1,0 +1,7 @@
+res=df.iloc[0:2]
+print(res)
+
+Output :
+birds  age  visits priority
+a  Cranes  3.5       2      yes
+b  Cranes  4.0       4      yes
