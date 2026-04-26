@@ -1,0 +1,9 @@
+result = df[df['age'].between(2, 4)]
+print(result)
+
+Output :
+        birds  age  visits priority
+a      Cranes  3.5       2      yes
+b      Cranes  4.0       4      yes
+f      Cranes  3.0       4       no
+j  spoonbills  4.0       2       no
