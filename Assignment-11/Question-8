@@ -1,0 +1,7 @@
+result = df[(df['birds'] == 'Cranes') & (df['age'] < 4)]
+print(result)
+
+Output :
+    birds  age  visits priority
+a  Cranes  3.5       2      yes
+f  Cranes  3.0       4       no
