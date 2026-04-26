@@ -1,0 +1,12 @@
+result = df[df['visits'] < 4]
+print(result)
+
+Output :
+        birds  age  visits priority
+a      Cranes  3.5       2      yes
+c     plovers  1.5       3       no
+e  spoonbills  6.0       3       no
+g     plovers  5.5       2       no
+h      Cranes  NaN       2      yes
+i  spoonbills  8.0       3       no
+j  spoonbills  4.0       2       no
