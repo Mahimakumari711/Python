@@ -1,3 +1,7 @@
-res=df[['age']]
-res1=df.dropna(subset =['age'])
-print(res1)
+result = df.loc[birds['age'].isnull(), ['birds', 'visits']]
+print(result)
+
+Output :
+        birds  visits
+d  spoonbills       4
+h      Cranes       2
