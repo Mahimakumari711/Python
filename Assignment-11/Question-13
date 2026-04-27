@@ -1,0 +1,12 @@
+bird_counts = df['birds'].value_counts()
+print(bird_counts)
+
+
+Output :
+
+birds
+Cranes        4
+spoonbills    4
+plovers       2
+eagle         1
+Name: count, dtype: int64
