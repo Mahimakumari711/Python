@@ -1,0 +1,117 @@
+import pandas as pd
+import numpy as np
+
+data = {'Roll No': [1, 2, 3, 4, 5],
+    'Name': ['Rahul', 'Amit', 'Sneha', 'Priya', 'Vikas'],
+    'Marks1': [85, 72, 90, 78, 95],
+    'Marks2': [80, 70, 85, 74, 92],
+    'Marks3': [88, 68, 92, 80, 90]}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+print()
+
+
+Output :
+Original DataFrame:
+   Roll No   Name  Marks1  Marks2  Marks3
+0        1  Rahul      85      80      88
+1        2   Amit      72      70      68
+2        3  Sneha      90      85      92
+3        4  Priya      78      74      80
+4        5  Vikas      95      92      90
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+df['Total Marks'] = df['Marks1'] + df['Marks2'] + df['Marks3']
+df['Percentage'] = (df['Total Marks'] / 300) * 100
+print("After adding Total Marks and Percentage:")
+print(df)
+print()
+
+Output : 
+After adding Total Marks and Percentage:
+   Roll No   Name  Marks1  Marks2  Marks3  Total Marks  Percentage
+0        1  Rahul      85      80      88          253   84.333333
+1        2   Amit      72      70      68          210   70.000000
+2        3  Sneha      90      85      92          267   89.000000
+3        4  Priya      78      74      80          232   77.333333
+4        5  Vikas      95      92      90          277   92.333333
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+def assign_grade(perc):
+    if perc >= 90:
+        return 'A'
+    elif perc >= 80:
+        return 'A-'
+    elif perc >= 75:
+        return 'B+'
+    elif perc >= 60:
+        return 'B'
+    elif perc >= 50:
+        return 'C'
+    else:
+        return 'F'
+
+df['Grade'] = df['Percentage'].apply(assign_grade)
+print("After adding Grade column:")
+print(df)
+print()
+
+Output :
+After adding Grade column:
+   Roll No   Name  Marks1  Marks2  Marks3  Total Marks  Percentage Grade
+0        1  Rahul      85      80      88          253   84.333333    A-
+1        2   Amit      72      70      68          210   70.000000     B
+2        3  Sneha      90      85      92          267   89.000000    A-
+3        4  Priya      78      74      80          232   77.333333    B+
+4        5  Vikas      95      92      90          277   92.333333     A
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+above_75 = df[df['Percentage'] > 75][['Roll No', 'Name', 'Percentage', 'Grade']]
+print("Students scoring more than 75%:")
+print(above_75)
+print()
+
+
+Output :
+Students scoring more than 75%:
+   Roll No   Name  Percentage Grade
+0        1  Rahul   84.333333    A-
+2        3  Sneha   89.000000    A-
+3        4  Priya   77.333333    B+
+4        5  Vikas   92.333333     A
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+second_highest = (df.sort_values(by='Percentage', ascending=False)
+      .iloc[1][['Roll No', 'Name', 'Percentage', 'Grade']])
+print("Student with second highest percentage:")
+print(second_highest)
+print()
+
+Output :
+Student with second highest percentage:
+Roll No           3
+Name          Sneha
+Percentage     89.0
+Grade            A-
+Name: 2, dtype: object
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+df_sorted = df.sort_values(by='Percentage', ascending=False).reset_index(drop=True)
+print("DataFrame sorted by percentage (descending):")
+print(df_sorted)
+
+Output :
+DataFrame sorted by percentage (descending):
+   Roll No   Name  Marks1  Marks2  Marks3  Total Marks  Percentage Grade
+0        5  Vikas      95      92      90          277   92.333333     A
+1        3  Sneha      90      85      92          267   89.000000    A-
+2        1  Rahul      85      80      88          253   84.333333    A-
+3        4  Priya      78      74      80          232   77.333333    B+
+4        2   Amit      72      70      68          210   70.000000     B
