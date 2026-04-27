@@ -1,0 +1,18 @@
+sorted_birds = df.sort_values(by=['age', 'visits'], ascending=[False, True])
+print(sorted_birds)
+
+
+Output :
+
+        birds  age  visits priority
+i  spoonbills  8.0       3       no
+e  spoonbills  6.0       3       no
+g     plovers  5.5       2       no
+j  spoonbills  4.0       2       no
+b      Cranes  4.0       4      yes
+a      Cranes  3.5       2      yes
+f      Cranes  3.0       4       no
+k       eagle  2.0       2       no
+c     plovers  1.5       3       no
+h      Cranes  NaN       2      yes
+d  spoonbills  NaN       4      yes
