@@ -1,0 +1,17 @@
+df['birds'] = df['birds'].replace('Cranes', 'trumpeters')
+print(birds)
+
+
+Output :
+
+        birds  age  visits  priority
+a      Cranes  3.5       2         1
+b      Cranes  4.0       4         1
+c     plovers  1.5       3         0
+d  spoonbills  NaN       4         1
+e  spoonbills  6.0       3         0
+f      Cranes  3.0       4         0
+g     plovers  5.5       2         0
+h      Cranes  NaN       2         1
+i  spoonbills  8.0       3         0
+j  spoonbills  4.0       2         0
