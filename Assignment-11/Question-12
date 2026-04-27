@@ -1,0 +1,37 @@
+df.loc['k'] = ['eagle', 2, 2, 'no']
+print("DataFrame after appending row 'k':")
+print(df)
+birds = df.drop('k')
+print("\nDataFrame after deleting row 'k':")
+print(df)
+
+
+Output :
+
+DataFrame after appending row 'k':
+        birds  age  visits priority
+a      Cranes  3.5       2      yes
+b      Cranes  4.0       4      yes
+c     plovers  1.5       3       no
+d  spoonbills  NaN       4      yes
+e  spoonbills  6.0       3       no
+f      Cranes  3.0       4       no
+g     plovers  5.5       2       no
+h      Cranes  NaN       2      yes
+i  spoonbills  8.0       3       no
+j  spoonbills  4.0       2       no
+k       eagle  2.0       2       no
+
+DataFrame after deleting row 'k':
+        birds  age  visits priority
+a      Cranes  3.5       2      yes
+b      Cranes  4.0       4      yes
+c     plovers  1.5       3       no
+d  spoonbills  NaN       4      yes
+e  spoonbills  6.0       3       no
+f      Cranes  3.0       4       no
+g     plovers  5.5       2       no
+h      Cranes  NaN       2      yes
+i  spoonbills  8.0       3       no
+j  spoonbills  4.0       2       no
+k       eagle  2.0       2       no
