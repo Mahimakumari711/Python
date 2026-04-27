@@ -1,0 +1,6 @@
+total_visits = df.loc[df['birds'] == 'Cranes', 'visits'].sum()
+print(f"Total number of visits for Cranes: {total_visits}")
+
+Output :
+
+Total number of visits for Cranes: 12
