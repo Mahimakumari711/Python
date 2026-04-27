@@ -1,0 +1,11 @@
+mean_age_by_bird = df.groupby('birds')['age'].mean()
+print(mean_age_by_bird)
+
+
+Output :
+
+birds
+Cranes        3.5
+plovers       3.5
+spoonbills    6.0
+Name: age, dtype: float64
