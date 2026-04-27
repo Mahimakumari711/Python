@@ -1,0 +1,116 @@
+import pandas as pd
+data = {'roll No': [1, 2, 3, 4, 5],
+    'name': ['Rahul', 'Amit', 'Sneha', 'Priya', 'Vikas'],
+    'marks': [85, 72, 90, 68, 95],
+    'city': ['Mumbai', 'Delhi', 'Mumbai', 'Chennai', 'Delhi']}
+
+student = pd.DataFrame(data)
+print("Original DataFrame:")
+print(student)
+print()
+
+Output :
+
+Original DataFrame:
+   roll No   name  marks     city
+0        1  Rahul     85   Mumbai
+1        2   Amit     72    Delhi
+2        3  Sneha     90   Mumbai
+3        4  Priya     68  Chennai
+4        5  Vikas     95    Delhi
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+high_marks = student[student['marks'] > 80]
+print("Students with marks > 80:")
+print(high_marks)
+print()
+
+Output :
+
+Students with marks > 80:
+   roll No   name  marks    city
+0        1  Rahul     85  Mumbai
+2        3  Sneha     90  Mumbai
+4        5  Vikas     95   Delhi
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+city = input("Enter city (e.g., Mumbai, Delhi, Chennai): ")
+filtered = student[student['city'] == city]
+print(f"\nStudents from {city}:")
+print(filtered)
+print()
+
+Output :
+
+Enter city (e.g., Mumbai, Delhi, Chennai):  Delhi
+
+Students from Delhi:
+   roll No   name  marks   city
+1        2   Amit     72  Delhi
+4        5  Vikas     95  Delhi
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+print("Using loc: select 'name' and 'city' columns:")
+print(student.loc[:, ['name', 'city']])
+print()
+print("Using iloc: select first two columns (roll No and name):")
+print(student.iloc[:, 0:2])
+
+Output :
+
+Using loc: select 'name' and 'city' columns:
+    name     city
+0  Rahul   Mumbai
+1   Amit    Delhi
+2  Sneha   Mumbai
+3  Priya  Chennai
+4  Vikas    Delhi
+
+Using iloc: select first two columns (roll No and name):
+   roll No   name
+0        1  Rahul
+1        2   Amit
+2        3  Sneha
+3        4  Priya
+4        5  Vikas
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+roll = int(input("Enter roll No to update marks: "))
+new_marks = float(input("Enter new marks: "))
+student.loc[student['roll No'] == roll, 'marks'] = new_marks
+print(f"\nAfter updating roll No {roll} marks:")
+print(student)
+print()
+
+Output :
+
+Enter roll No to update marks:  2
+Enter new marks:  89
+
+After updating roll No 2 marks:
+   roll No   name  marks     city
+0        1  Rahul     85   Mumbai
+1        2   Amit     89    Delhi
+2        3  Sneha     90   Mumbai
+3        4  Priya     68  Chennai
+4        5  Vikas     95    Delhi
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+student = student.drop(columns=['city'])
+print("DataFrame after deleting 'city' column:")
+print(student)
+
+Output :
+
+DataFrame after deleting 'city' column:
+   roll No   name  marks
+0        1  Rahul     85
+1        2   Amit     89
+2        3  Sneha     90
+3        4  Priya     68
+4        5  Vikas     95
