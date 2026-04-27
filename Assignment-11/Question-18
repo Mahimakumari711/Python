@@ -1,0 +1,91 @@
+import pandas as pd
+
+data = {'EmpID': [101, 102, 103, 104, 105],
+    'Name': ['Rahul', 'Amit', 'Sneha', 'Priya', 'Vikas'],
+    'Department': ['IT', 'HR', 'IT', 'Sales', 'HR'],
+    'Salary': [60000, 45000, 70000, 50000, 55000]}
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+print()
+
+
+Output :
+
+Original DataFrame:
+   EmpID   Name Department  Salary
+0    101  Rahul         IT   60000
+1    102   Amit         HR   45000
+2    103  Sneha         IT   70000
+3    104  Priya      Sales   50000
+4    105  Vikas         HR   55000
+
+--------------------------------------------------------------------------------------------------------------------------
+
+dept = input("Enter department to filter (e.g., IT, HR, Sales): ")
+filtered = df[df['Department'] == dept]
+print(f"\nEmployees in department '{dept}':")
+print(filtered)
+print()
+
+Output :
+Enter department to filter (e.g., IT, HR, Sales):  HR
+
+Employees in department 'HR':
+   EmpID   Name Department  Salary
+1    102   Amit         HR   45000
+4    105  Vikas         HR   55000
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+df['Salary'] = df['Salary'] * 1.10
+print("After 10% salary increase:")
+print(df)
+print()
+
+Output :
+
+After 10% salary increase:
+   EmpID   Name Department   Salary
+0    101  Rahul         IT  66000.0
+1    102   Amit         HR  49500.0
+2    103  Sneha         IT  77000.0
+3    104  Priya      Sales  55000.0
+4    105  Vikas         HR  60500.0
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+max_salary = df['Salary'].max()
+min_salary = df['Salary'].min()
+print(f"Highest salary: {max_salary:,.2f}")
+print(f"Lowest salary:  {min_salary:,.2f}")
+print()
+
+Output :
+
+Highest salary: 77,000.00
+Lowest salary:  49,500.00
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+avg_salary = df.groupby('Department')['Salary'].mean()
+print("Average salary by department:")
+print(avg_salary)
+print()
+
+Output :
+
+Average salary by department:
+Department
+HR       55000.0
+IT       71500.0
+Sales    55000.0
+Name: Salary, dtype: float64
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+df.to_csv('employees.csv', index=False)
+print("DataFrame saved to 'employees.csv'")
+
+Output :
+DataFrame saved to 'employees.csv'
