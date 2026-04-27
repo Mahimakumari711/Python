@@ -1,0 +1,105 @@
+import pandas as pd
+
+data = {'ProductID': [101, 102, 103, 104, 105],
+    'ProductName': ['Laptop', 'Mouse', 'Monitor', 'Keyboard', 'Headphones'],
+    'Category': ['Electronics', 'Electronics', 'Electronics', 'Electronics', 'Electronics'],
+    'Price': [50000, 500, 12000, 1500, 2000],
+    'Quantity': [5, 80, 12, 35, 45]}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+print()
+
+Output :
+
+Original DataFrame:
+   ProductID ProductName     Category  Price  Quantity
+0        101      Laptop  Electronics  50000         5
+1        102       Mouse  Electronics    500        80
+2        103     Monitor  Electronics  12000        12
+3        104    Keyboard  Electronics   1500        35
+4        105  Headphones  Electronics   2000        45
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+df['Revenue'] = df['Price'] * df['Quantity']
+total_revenue = df['Revenue'].sum()
+
+print("After adding Revenue:")
+print(df)
+print()
+print(f"Total revenue = {total_revenue:,}")
+print()
+
+Output :
+
+After adding Revenue:
+   ProductID ProductName     Category  Price  Quantity  Revenue
+0        101      Laptop  Electronics  50000         5   250000
+1        102       Mouse  Electronics    500        80    40000
+2        103     Monitor  Electronics  12000        12   144000
+3        104    Keyboard  Electronics   1500        35    52500
+4        105  Headphones  Electronics   2000        45    90000
+
+Total revenue = 576,500
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+top_n = int(input("Enter how many top‑selling products to show: "))
+
+top_selling = df.sort_values(by='Revenue', ascending=False).head(top_n)
+print(f"\nTop {top_n} selling products:")
+print(top_selling[['ProductID', 'ProductName', 'Category', 'Price', 'Quantity', 'Revenue']])
+print()
+
+Output :
+
+Enter how many top‑selling products to show:  5
+
+Top 5 selling products:
+   ProductID ProductName     Category  Price  Quantity  Revenue
+0        101      Laptop  Electronics  50000         5   250000
+2        103     Monitor  Electronics  12000        12   144000
+4        105  Headphones  Electronics   2000        45    90000
+3        104    Keyboard  Electronics   1500        35    52500
+1        102       Mouse  Electronics    500        80    40000
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+low_threshold = float(input("Enter low‑sales revenue threshold: "))
+
+low_sales = df[df['Revenue'] < low_threshold]
+print(f"\nProducts with revenue < {low_threshold}:")
+print(low_sales[['ProductID', 'ProductName', 'Category', 'Price', 'Quantity', 'Revenue']])
+print()
+
+Output :
+
+Enter low‑sales revenue threshold:  60000.0
+
+Products with revenue < 60000.0:
+   ProductID ProductName     Category  Price  Quantity  Revenue
+1        102       Mouse  Electronics    500        80    40000
+3        104    Keyboard  Electronics   1500        35    52500
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+category_revenue = df.groupby('Category')['Revenue'].sum().reset_index()
+
+print("Total revenue by category:")
+print(category_revenue)
+
+Output :
+
+Total revenue by category:
+      Category  Revenue
+0  Electronics   576500
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+with pd.ExcelWriter('product_sales.xlsx') as writer:
+    df.to_excel(writer, sheet_name='Product Sales', index=False)
+    category_revenue.to_excel(writer, sheet_name='Revenue by Category', index=False)
+
+print("\nAll results exported to 'product_sales.xlsx'")
