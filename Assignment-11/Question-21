@@ -1,0 +1,110 @@
+import pandas as pd
+
+df = pd.read_csv('students.csv')
+print("Original DataFrame:")
+print(df)
+print()
+
+Output :
+
+Original DataFrame:
+      Name  Age Grade    Major
+0    Alice   20     A       CS
+1      Bob   21    B+     Math
+2  Charlie   19    A-  Physics
+3    Diana   22     B       CS
+4      Eve   20     A       EE
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+df['Total'] = df['Marks1'] + df['Marks2'] + df['Marks3']
+df['Percentage'] = (df['Total'] / 300) * 100
+print("With Total and Percentage:")
+print(df)
+print()
+
+
+Output :
+
+With Total and Percentage:
+      Name  Age Grade    Major  Marks1  Marks2  Marks3  Total  Percentage
+0    Alice   20     A       CS      98      93      93    284   94.666667
+1      Bob   21    B+     Math      88      73      90    251   83.666667
+2  Charlie   19    A-  Physics      74      77      73    224   74.666667
+3    Diana   22     B       CS      67      65      77    209   69.666667
+4      Eve   20     A       EE      80      65      93    238   79.333333
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+def assign_grade(perc):
+    if perc >= 90:
+        return 'A+'
+    elif perc >= 80:
+        return 'A'
+    elif perc >= 75:
+        return 'B+'
+    elif perc >= 60:
+        return 'B'
+    elif perc >= 40:
+        return 'C'
+    else:
+        return 'F'
+
+df['Grade'] = df['Percentage'].apply(assign_grade)
+print("With Grade column:")
+print(df)
+print()
+
+Output :
+
+With Grade column:
+      Name  Age Grade    Major  Marks1  Marks2  Marks3  Total  Percentage
+0    Alice   20    A+       CS      98      93      93    284   94.666667
+1      Bob   21     A     Math      88      73      90    251   83.666667
+2  Charlie   19     B  Physics      74      77      73    224   74.666667
+3    Diana   22     B       CS      67      65      77    209   69.666667
+4      Eve   20    B+       EE      80      65      93    238   79.333333
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+above_75 = df[df['Percentage'] > 75][['RollNo', 'Name', 'Total', 'Percentage', 'Grade']]
+print("Students scoring above 75%:")
+print(above_75)
+print()
+
+Output :
+
+Students scoring above 75%:
+   RollNo   Name  Total  Percentage Grade
+0       1  Alice    284   94.666667    A+
+1       2    Bob    251   83.666667     A
+4       5    Eve    238   79.333333     B
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+if len(df) >= 2:
+    second_highest = (df.sort_values(by='Percentage', ascending=False)
+          .iloc[1][['RollNo', 'Name', 'Total', 'Percentage', 'Grade']])
+    print("Student with second highest percentage:")
+    print(second_highest)
+else:
+    print("Not enough students to find second highest percentage.")
+
+Output :
+
+Student with second highest percentage:
+RollNo                2
+Name                Bob
+Total               251
+Percentage    83.666667
+Grade                 A
+Name: 1, dtype: object
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+df.to_csv('result.csv', index=False)
+print("\nFinal DataFrame saved to 'result.csv'")
+
+Output :
+
+Final DataFrame saved to 'result.csv'
